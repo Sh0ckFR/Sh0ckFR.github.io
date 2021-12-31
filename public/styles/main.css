@@ -1,0 +1,122 @@
+html, body {
+	background: #000;
+	color: #fff;
+}
+
+p {
+	white-space: pre-line;
+}
+
+a {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+
+a:hover {
+	text-decoration: none;
+	color: #FF0000;
+}
+
+ul { list-style-type: none; }
+ul li { float:left; }
+ul li svg { margin-left: 1em; margin-right: 0.5em; }
+
+.hljs {
+	background-color: #181818;
+}
+
+.hljs-keyword {
+	color: #FF0000;
+}
+
+.hljs-meta {
+	color: #FFFFFF;
+}
+
+.hljs-meta .hljs-string {
+	color: #FFFFFF;
+}
+
+#logo {
+	float: right;
+}
+
+#logo img {
+	width: 6vw;
+	float: right;
+	margin: 1em;
+}
+
+#banner {
+	width: 70vw;
+}
+
+#left-menu {
+	margin-top: 5em;
+}
+
+.text-red {
+	color: #FF0000;
+}
+
+.text-green {
+	color: #00FF00;
+}
+
+.text-blue {
+	color: #0000FF;
+}
+
+.stack {
+	display: grid;
+	grid-template-columns: 1fr;
+	float: right;
+	margin-top: 2em;
+}
+
+.stack span {
+	font-family: caption;
+	grid-row-start: 1;
+	grid-column-start: 1;
+	font-size: 2rem;
+	--stack-height: calc(100% / var(--stacks) - 1px);
+	--inverse-index: calc(calc(var(--stacks) - 1) - var(--index));
+	--clip-top: calc(var(--stack-height) * var(--index));
+	--clip-bottom: calc(var(--stack-height) * var(--inverse-index));
+	clip-path: inset(var(--clip-top) 0 var(--clip-bottom) 0);
+	animation: stack 340ms cubic-bezier(.46,.29,0,1.24) 1 backwards calc(var(--index) * 120ms), glitch 2s ease infinite 2s alternate-reverse;
+}
+
+.stack span:nth-child(odd) { --glitch-translate: 8px; }
+.stack span:nth-child(even) { --glitch-translate: -8px; }
+
+@keyframes stack {
+  0% {
+	opacity: 0;
+	transform: translateX(-50%);
+	text-shadow: -2px 3px 0 red, 2px -3px 0 blue;
+  };
+  60% {
+    opacity: 0.5;
+    transform: translateX(50%);
+  }
+  80% {
+    transform: none;
+    opacity: 1;
+    text-shadow: 2px -3px 0 red, -2px 3px 0 blue;
+  }
+  100% {
+    text-shadow: none;
+  }
+}
+
+@keyframes glitch {
+  0% {
+    text-shadow: -2px 3px 0 red, 2px -3px 0 blue;
+    transform: translate(var(--glitch-translate));
+  }
+  2% {
+    text-shadow: 2px -3px 0 red, -2px 3px 0 blue;
+  }
+  4%, 100% {  text-shadow: none; transform: none; }
+}
