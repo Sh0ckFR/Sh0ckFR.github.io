@@ -118,7 +118,7 @@ void InjectDll(const HANDLE hProcess, const char* dllPath)
 
 							<a class="link" href="https://docs.microsoft.com/en-us/windows/win32/api/memoryapi/nf-memoryapi-virtualallocex#syntax" target="_blank">https://docs.microsoft.com/en-us/windows/win32/api/memoryapi/nf-memoryapi-virtualallocex#syntax</a>
 
-							On peut voir quelle prend en arguments IN un <mark>HANDLE hProcess</mark>, en IN OPTIONAL une <mark>LPVOID lpAddress</mark>, en IN un <mark>SIZE_T dwSize</mark>, et 2 DWORD <mark>flAllocationType et flProtect</mark>.
+							On peut voir qu'elle prend en arguments IN un <mark>HANDLE hProcess</mark>, en IN OPTIONAL une <mark>LPVOID lpAddress</mark>, en IN un <mark>SIZE_T dwSize</mark>, et 2 DWORD <mark>flAllocationType et flProtect</mark>.
 
 							En cherchant dans la documentation non documentée on tombe sur la description de l'appel <mark>NtAllocateVirtualMemory</mark> :
 						</p>
