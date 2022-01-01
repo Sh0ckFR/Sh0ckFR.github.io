@@ -3,6 +3,20 @@ html, body {
 	color: #fff;
 }
 
+h1 {
+	font-size: 20pt;
+	font-style: italic;
+	margin-top: 1em !important;
+}
+
+h3 {
+	font-size: 16pt;
+}
+
+h4 {
+	margin-top: 1em !important;
+}
+
 p {
 	white-space: pre-line;
 }
@@ -17,12 +31,13 @@ a:hover {
 	color: #FF0000;
 }
 
-ul { list-style-type: none; }
+ul { list-style-type: none; margin-top: 1em !important; }
 ul li { float:left; }
 ul li svg { margin-left: 1em; margin-right: 0.5em; }
 
 .hljs {
 	background-color: #181818;
+	color: #FFFFFF;
 }
 
 .hljs-keyword {
@@ -66,6 +81,16 @@ ul li svg { margin-left: 1em; margin-right: 0.5em; }
 
 .text-blue {
 	color: #0000FF;
+}
+
+.link {
+	text-decoration: underline;
+}
+
+mark, .mark {
+	background-color: #181818;
+	padding: 0em;
+	color: #FFFFFF;
 }
 
 .stack {
