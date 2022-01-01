@@ -88,7 +88,7 @@ ul li svg { margin-left: 1em; margin-right: 0.5em; }
 }
 
 mark, .mark {
-	background-color: #181818;
+	background-color: #181818 !important;
 	padding: 0em;
 	color: #FFFFFF;
 }
