@@ -9,6 +9,12 @@ h1 {
 	margin-top: 1em !important;
 }
 
+h2 {
+	font-size: 18pt;
+	font-style: italic;
+	margin-top: 1em !important;
+}
+
 h3 {
 	font-size: 16pt;
 }
@@ -34,6 +40,10 @@ a:hover {
 ul { list-style-type: none; margin-top: 1em !important; }
 ul li { float:left; }
 ul li svg { margin-left: 1em; margin-right: 0.5em; }
+
+table {
+	color: #FFFFFF !important;
+}
 
 .hljs {
 	background-color: #181818;
