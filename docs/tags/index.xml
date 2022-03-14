@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Sh0ckFR&#39;s Website | CyberPunk, Born in the binary world of the computer security</title>
-    <link>https://sh0ckfr.com/tags/</link>
+    <link>https://sh0ckfr.github.io/tags/</link>
     <description>Recent content in Tags on Sh0ckFR&#39;s Website | CyberPunk, Born in the binary world of the computer security</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 21 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://sh0ckfr.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 21 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://sh0ckfr.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>red-team</title>
-      <link>https://sh0ckfr.com/tags/red-team/</link>
+      <link>https://sh0ckfr.github.io/tags/red-team/</link>
       <pubDate>Fri, 21 Jan 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://sh0ckfr.com/tags/red-team/</guid>
+      <guid>https://sh0ckfr.github.io/tags/red-team/</guid>
       <description></description>
     </item>
     
