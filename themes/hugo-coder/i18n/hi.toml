@@ -1,0 +1,61 @@
+[categories]
+one = "श्रेणी"
+other = "categories"
+
+[tags]
+one = "टैग"
+other = "tags"
+
+[series]
+one = "श्रृंखला"
+other = "series"
+
+[authors]
+one = "लेखक"
+other = "authors"
+
+[posts]
+other = "सामग्री"
+
+[reading_time]
+one = "एक पढ़ने का समय"
+other = "{{ .Count }} पढ़ने का समय"
+
+[page_not_found]
+other = "पृष्ठ नहीं मिला"
+
+[page_does_not_exist]
+other = "क्षमा करें, यह पृष्ठ मौजूद नहीं है।"
+
+[head_back]
+other = "आप वापस आ सकते हैं <a href=\"{{ . }}\">मुखपृष्ठ</a>."
+
+[licensed_under]
+other = "Licensed under"
+
+[powered_by]
+other = "द्वारा संचालित"
+
+[see_also]
+other = "यह भी देखें"
+
+[note]
+other = "note"
+
+[tip]
+other = "tip"
+
+[example]
+other = "example"
+
+[question]
+other = "question"
+
+[info]
+other = "info"
+
+[warning]
+other = "warning"
+
+[error]
+other = "error"

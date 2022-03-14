@@ -1,0 +1,61 @@
+[categories]
+one = "বিভাগ"
+other = "categories"
+
+[tags]
+one = "ট্যাগ"
+other = "tags"
+
+[series]
+one = "সিরিজ"
+other = "series"
+
+[authors]
+one = "লেখক"
+other = "authors"
+
+[posts]
+other = "সব পোস্ট"
+
+[reading_time]
+one = "পড়তে এক মিনিট লাগবে"
+other = "পড়তে {{ .Count }} মিনিট লাগবে"
+
+[page_not_found]
+other = "পাতাটি পাওয়া যায় নি"
+
+[page_does_not_exist]
+other = "দুঃখিত, কাঙ্ক্ষিত পাতাটির অস্তিত্ব নেই"
+
+[head_back]
+other = "আপনি <a href=\"{{ . }}\">নীড়পাতায়</a> ফিরে যেতে পারেন"
+
+[licensed_under]
+other = "Licensed under"
+
+[powered_by]
+other = "চালনায়"
+
+[see_also]
+other = "আরও দেখুন"
+
+[note]
+other = "note"
+
+[tip]
+other = "tip"
+
+[example]
+other = "example"
+
+[question]
+other = "question"
+
+[info]
+other = "info"
+
+[warning]
+other = "warning"
+
+[error]
+other = "error"
