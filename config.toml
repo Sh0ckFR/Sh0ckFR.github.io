@@ -1,4 +1,4 @@
-baseURL = "https://sh0ckfr.github.io/docs/"
+baseURL = "https://sh0ckfr.github.io/"
 title = "Sh0ckFR's Website | CyberPunk, Born in the binary world of the computer security"
 theme = "hugo-coder"
 languageCode = "en"
