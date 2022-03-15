@@ -8,8 +8,6 @@ tags = [
 ]
 +++
 
-Martine à la recherche de la DLL Hijacking perdue
-
 Tout d'abord, vous me pardonnerez pour le titre de l'article, effectivement, durant mes recherches sur du `DLL Hijacking` un peu plus poussé que dans cet article, j'avais l'impression que Windows me faisait tourner en bourique, d'où ce titre peu glorieux car j'ai fail de nombreuses fois.
 
 Nous allons tout de même voir la base dans cet article, le but ici est de vous donner un aperçu de ce qu'est le DLL Hijacking et en quoi il peut être utile durant un exercice `Red-Team`, bien entendu tout comme moi, vous pourrez ensuite aller plus loin en vous intéressant au sujet, la technique n'étant pas nouvelle, il y a tout de même pas assez de ressources à mon sens sur le sujet et donc beaucoup à faire.

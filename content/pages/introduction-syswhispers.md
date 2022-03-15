@@ -8,8 +8,6 @@ tags = [
 ]
 +++
 
-Introduction à Syswhispers1 et Syswhispers2
-
 Bon, commençons par le commencement, Syswhispers c'est quoi ?
 
 Il s'agit en fait d'une méthode permettant d'effectuer des appels dits "direct system calls".

@@ -13,8 +13,7 @@
       <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
       
       <guid>https://sh0ckfr.github.io/pages/martine-a-la-recherche-de-la-dll-hijacking-perdue/</guid>
-      <description>Martine à la recherche de la DLL Hijacking perdue
-Tout d&amp;rsquo;abord, vous me pardonnerez pour le titre de l&amp;rsquo;article, effectivement, durant mes recherches sur du DLL Hijacking un peu plus poussé que dans cet article, j&amp;rsquo;avais l&amp;rsquo;impression que Windows me faisait tourner en bourique, d&amp;rsquo;où ce titre peu glorieux car j&amp;rsquo;ai fail de nombreuses fois.
+      <description>Tout d&amp;rsquo;abord, vous me pardonnerez pour le titre de l&amp;rsquo;article, effectivement, durant mes recherches sur du DLL Hijacking un peu plus poussé que dans cet article, j&amp;rsquo;avais l&amp;rsquo;impression que Windows me faisait tourner en bourique, d&amp;rsquo;où ce titre peu glorieux car j&amp;rsquo;ai fail de nombreuses fois.
 Nous allons tout de même voir la base dans cet article, le but ici est de vous donner un aperçu de ce qu&amp;rsquo;est le DLL Hijacking et en quoi il peut être utile durant un exercice Red-Team, bien entendu tout comme moi, vous pourrez ensuite aller plus loin en vous intéressant au sujet, la technique n&amp;rsquo;étant pas nouvelle, il y a tout de même pas assez de ressources à mon sens sur le sujet et donc beaucoup à faire.</description>
     </item>
     
@@ -24,10 +23,9 @@ Nous allons tout de même voir la base dans cet article, le but ici est de vous 
       <pubDate>Fri, 21 Jan 2022 00:00:00 +0000</pubDate>
       
       <guid>https://sh0ckfr.github.io/pages/les-differences-entre-red-team-et-pentest/</guid>
-      <description>Les différences entre Red Team et Pentest
-Qui n&amp;rsquo;a jamais entendu autour de lui &amp;ldquo;Je fais du Red Team, du vrai Red Team !&amp;rdquo; ?
+      <description>Qui n&amp;rsquo;a jamais entendu autour de lui &amp;ldquo;Je fais du Red Team, du vrai Red Team !&amp;rdquo; ?
 Cette phrase, je l&amp;rsquo;ai souvent entendu dans des conférences, des soirées infosec et j&amp;rsquo;en passe, là où il fallait placer Red Team dans une conversation, à coup sûr ça faisait mouche.
-Mais qu&amp;rsquo;en est-il vraiment ? est-ce du pentest ? est-ce que le pentest peut être considéré comme Red Team ?</description>
+Mais qu&amp;rsquo;en est-il vraiment ? est-ce du pentest ? est-ce que le pentest peut être considéré comme Red Team ? cet article n&amp;rsquo;a pas vocation à être technique et a pour but de démystifier la chose et expliquer clairement ce qu&amp;rsquo;il en est.</description>
     </item>
     
     <item>
@@ -36,8 +34,7 @@ Mais qu&amp;rsquo;en est-il vraiment ? est-ce du pentest ? est-ce que le pentest
       <pubDate>Sun, 02 Jan 2022 00:00:00 +0000</pubDate>
       
       <guid>https://sh0ckfr.github.io/pages/introduction-syswhispers/</guid>
-      <description>Introduction à Syswhispers1 et Syswhispers2
-Bon, commençons par le commencement, Syswhispers c&amp;rsquo;est quoi ?
+      <description>Bon, commençons par le commencement, Syswhispers c&amp;rsquo;est quoi ?
 Il s&amp;rsquo;agit en fait d&amp;rsquo;une méthode permettant d&amp;rsquo;effectuer des appels dits &amp;ldquo;direct system calls&amp;rdquo;.
 L&amp;rsquo;instruction syscall est utilisée pour faire la transition entre le User-Mode (UM) et le Kernel-Mode (KM) en utilisant un identifiant 16-bits WORD depuis le registre EAX.
 Cet identifiant étant un index dans la structure interne de la table System Service Descriptor Table (SSDT) dans la pile d&amp;rsquo;exécution du Kernel.</description>
