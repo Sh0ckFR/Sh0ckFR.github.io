@@ -1,6 +1,6 @@
 +++
 author = "Sh0ckFR"
-title = "Les différences entre Red Team et Pentest"
+title = "Introduction à Syswhispers1 et Syswhispers2"
 date = "2022-01-02"
 description = "Introduction à Syswhispers1 et Syswhispers2"
 tags = [
