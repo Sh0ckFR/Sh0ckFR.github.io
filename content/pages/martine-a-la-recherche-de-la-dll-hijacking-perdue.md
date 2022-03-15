@@ -14,6 +14,8 @@ Tout d'abord, vous me pardonnerez pour le titre de l'article, effectivement, dur
 
 Nous allons tout de même voir la base dans cet article, le but ici est de vous donner un aperçu de ce qu'est le DLL Hijacking et en quoi il peut être utile durant un exercice `Red-Team`, bien entendu tout comme moi, vous pourrez ensuite aller plus loin en vous intéressant au sujet, la technique n'étant pas nouvelle, il y a tout de même pas assez de ressources à mon sens sur le sujet et donc beaucoup à faire.
 
+![Sh0ckFR DLL Hijacking Martine](/images/martine-dll-hijacking.jpg)
+
 ## Qu'est-ce que le DLL Hijacking ?
 
 Sous Microsoft Windows, les applications ont besoin de tourner via des dépendances qui ont généralement l'extension `.dll` pour `Dynamic Link Libraries`.
