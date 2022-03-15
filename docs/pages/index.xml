@@ -6,7 +6,18 @@
     <description>Recent content in Pages on Sh0ckFR&#39;s Website | CyberPunk, Born in the binary world of the computer security</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 21 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://sh0ckfr.github.io/pages/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 15 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://sh0ckfr.github.io/pages/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Martine à la recherche de la DLL Hijacking perdue</title>
+      <link>https://sh0ckfr.github.io/pages/martine-a-la-recherche-de-la-dll-hijacking-perdue/</link>
+      <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh0ckfr.github.io/pages/martine-a-la-recherche-de-la-dll-hijacking-perdue/</guid>
+      <description>Martine à la recherche de la DLL Hijacking perdue
+Tout d&amp;rsquo;abord, vous me pardonnerez pour le titre de l&amp;rsquo;article, effectivement, durant mes recherches sur du DLL Hijacking un peu plus poussé que dans cet article, j&amp;rsquo;avais l&amp;rsquo;impression que Windows me faisait tourner en bourique, d&amp;rsquo;où ce titre peu glorieux car j&amp;rsquo;ai fail de nombreuses fois.
+Nous allons tout de même voir la base dans cet article, le but ici est de vous donner un aperçu de ce qu&amp;rsquo;est le DLL Hijacking et en quoi il peut être utile durant un exercice Red-Team, bien entendu tout comme moi, vous pourrez ensuite aller plus loin en vous intéressant au sujet, la technique n&amp;rsquo;étant pas nouvelle, il y a tout de même pas assez de ressources à mon sens sur le sujet et donc beaucoup à faire.</description>
+    </item>
+    
     <item>
       <title>Les différences entre Red Team et Pentest</title>
       <link>https://sh0ckfr.github.io/pages/les-differences-entre-red-team-et-pentest/</link>
