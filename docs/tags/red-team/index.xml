@@ -19,5 +19,18 @@ Cette phrase, je l&amp;rsquo;ai souvent entendu dans des conférences, des soir�
 Mais qu&amp;rsquo;en est-il vraiment ? est-ce du pentest ? est-ce que le pentest peut être considéré comme Red Team ?</description>
     </item>
     
+    <item>
+      <title>Introduction à Syswhispers1 et Syswhispers2</title>
+      <link>https://sh0ckfr.github.io/pages/introduction-syswhispers/</link>
+      <pubDate>Sun, 02 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh0ckfr.github.io/pages/introduction-syswhispers/</guid>
+      <description>Introduction à Syswhispers1 et Syswhispers2
+Bon, commençons par le commencement, Syswhispers c&amp;rsquo;est quoi ?
+Il s&amp;rsquo;agit en fait d&amp;rsquo;une méthode permettant d&amp;rsquo;effectuer des appels dits &amp;ldquo;direct system calls&amp;rdquo;.
+L&amp;rsquo;instruction syscall est utilisée pour faire la transition entre le User-Mode (UM) et le Kernel-Mode (KM) en utilisant un identifiant 16-bits WORD depuis le registre EAX.
+Cet identifiant étant un index dans la structure interne de la table System Service Descriptor Table (SSDT) dans la pile d&amp;rsquo;exécution du Kernel.</description>
+    </item>
+    
   </channel>
 </rss>

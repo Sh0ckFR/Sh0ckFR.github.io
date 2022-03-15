@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+
+    
+      <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests; block-all-mixed-content; default-src 'self'; child-src 'self'; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net/; form-action 'self'; frame-src 'self'; img-src 'self'; object-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com/ https://cdn.jsdelivr.net/; script-src 'self' 'unsafe-inline' https://www.google-analytics.com https://cdn.jsdelivr.net/; prefetch-src 'self'; connect-src 'self' https://www.google-analytics.com;">
+
+    
+
+    <meta name="author" content="Sh0ckFR">
+    <meta name="description" content="Introduction à Syswhispers1 et Syswhispers2">
+    <meta name="keywords" content="redteam, red-team, infosec, security, pentest, forensics, ">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Introduction à Syswhispers1 et Syswhispers2"/>
+<meta name="twitter:description" content="Introduction à Syswhispers1 et Syswhispers2"/>
+
+    <meta property="og:title" content="Introduction à Syswhispers1 et Syswhispers2" />
+<meta property="og:description" content="Introduction à Syswhispers1 et Syswhispers2" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://sh0ckfr.github.io/pages/introduction-syswhispers/" /><meta property="article:section" content="pages" />
+<meta property="article:published_time" content="2022-01-02T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-01-02T00:00:00+00:00" />
+
+
+
+    <title>
+  Introduction à Syswhispers1 et Syswhispers2 · Sh0ckFR&#39;s Website | CyberPunk, Born in the binary world of the computer security
+</title>
+
+    
+      <link rel="canonical" href="https://sh0ckfr.github.io/pages/introduction-syswhispers/">
+    
+
+    <link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+    
+      
+      
+      <link rel="stylesheet" href="/css/coder.min.d9fddbffe6f27e69985dc5fe0471cdb0e57fbf4775714bc3d847accb08f4a1f6.css" integrity="" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+      
+        
+        
+        <link rel="stylesheet" href="/css/coder-dark.min.002ee2378e14c7a68f1f0a53d9694ed252090987c4e768023fac694a4fc5f793.css" integrity="" crossorigin="anonymous" media="screen" />
+      
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+    <meta name="generator" content="Hugo 0.94.1" />
+  </head>
+
+  
+  
+    
+  
+  <body class="preload-transitions colorscheme-dark">
+    
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        <li class="navigation-item">
+          <a class="navigation-link" href="/">Accueil</a>
+        </li>
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/pages/">Articles</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/about/">À propos</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container page">
+  <article>
+    <header>
+      <h1 class="title">
+        <a class="title-link" href="https://sh0ckfr.github.io/pages/introduction-syswhispers/">
+          Introduction à Syswhispers1 et Syswhispers2
+        </a>
+      </h1>
+    </header>
+
+    <p>Introduction à Syswhispers1 et Syswhispers2</p>
+<p>Bon, commençons par le commencement, Syswhispers c&rsquo;est quoi ?</p>
+<p>Il s&rsquo;agit en fait d&rsquo;une méthode permettant d&rsquo;effectuer des appels dits &ldquo;direct system calls&rdquo;.</p>
+<p>L&rsquo;instruction <code>syscall</code> est utilisée pour faire la transition entre le <code>User-Mode (UM)</code> et le <code>Kernel-Mode (KM)</code> en utilisant un identifiant 16-bits WORD depuis le registre EAX.</p>
+<p>Cet identifiant étant un index dans la structure interne de la table <code>System Service Descriptor Table (SSDT)</code> dans la pile d&rsquo;exécution du Kernel.</p>
+<p>En temps normal, quand vous utilisez des fonctions user-land comme <code>WriteProcessMemory</code> qui font parties de l&rsquo;<code>API Win32</code>, celles-ci passent par <code>ntdll.dll</code> et la fonction équivalente côté kernel-land <code>NtWriteVirtualMemory</code> est utilisée dans l&rsquo;opération.</p>
+<p>La plupart des antivirus / EDR se hookent principalement sur le module ntdll.dll pour analyser quelles fonctions vous utilisez.</p>
+<p>Un hook correspond à un trampoline, cette méthode permet de se greffer entre le début d&rsquo;exécution d&rsquo;une fonction et sa fin afin d&rsquo;observer ce qui se déroule durant celle-ci, un peu comme un <code>Man In The Middle (MITM)</code> mais pour une fonction dans un programme.</p>
+<p>Voici les différentes possibilités de hook une fonction : <a href="https://www.unknowncheats.me/forum/general-programming-and-reversing/154643-different-ways-hooking.html">https://www.unknowncheats.me/forum/general-programming-and-reversing/154643-different-ways-hooking.html</a></p>
+<p>Et donc si vous utilisez une fonction qui utilise <code>NtWriteVirtualMemory</code> et que celle-ci est hookée, votre EDR sera en capacité d&rsquo;avoir plus de visibilité pour réaliser des analyses dynamiques durant l&rsquo;exécution et potentiellement émettre une alerte pour l&rsquo;équipe Blue-Team si celui-ci observe un comportement suspect.</p>
+<p>Pour pallier à ce problème, une équipe de chercheurs s&rsquo;est basée sur la table des syscalls (system calls) récupérée par <code>j00ru</code> du Google Project Zero à l&rsquo;origine dans la table <code>System Service Descriptor Table (SSDT)</code>.</p>
+<p>Entre les versions de Windows, les numéros des syscalls varient, la table est visible sur cette page :</p>
+<p><a href="https://j00ru.vexillium.org/syscalls/nt/64/">https://j00ru.vexillium.org/syscalls/nt/64/</a></p>
+<p>Syswhispers qui est disponible sur cette page <a href="https://github.com/jthuraisamy/SysWhispers">https://github.com/jthuraisamy/SysWhispers</a> permet de générer un stub qui va réimplémenter les syscalls en fonction de cette table et de la version Windows souhaitée.</p>
+<p>La différence notable entre le PoC de Dumpert <a href="https://github.com/outflanknl/Dumpert">https://github.com/outflanknl/Dumpert</a> et Syswhispers, est que Syswhispers ne va pas utiliser la fonction <code>RtlGetVersion</code> pour obtenir la version de Windows mais va directement interroger le <code>Process Environment Block (PEB)</code> qui est une méthode un peu plus discrète que la précédente.</p>
+<p>Du coup comment utiliser Syswhispers ? le project est très accessible, la première étape est de générer le stub assembleur qui réimplémente les différents syscalls :</p>
+<p><a href="https://github.com/jthuraisamy/SysWhispers#command-lines">https://github.com/jthuraisamy/SysWhispers#command-lines</a></p>
+<p>Ce qui va vous donner un fichier .asm et un .h à importer dans votre projet, si vous êtes sur Visual Studio, n&rsquo;oubliez pas d&rsquo;activer MASM (right click sur votre projet -&gt; build customisations -&gt; on coche la petite case MASM).</p>
+<p>Ensuite comme le montre le projet GitHub, voici l&rsquo;exemple d&rsquo;un <code>CreateRemoteThread</code> pendant une injection de DLL sans utiliser Syswhispers :</p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#ff0007;background-color:#0f140f;font-weight:bold;font-style:italic">#include</span> <span style="color:#ff0007;background-color:#0f140f;font-weight:bold;font-style:italic">&lt;Windows.h&gt;</span><span style="color:#ff0007;background-color:#0f140f;font-weight:bold;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#ff0007;background-color:#0f140f;font-weight:bold;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#cdcaa9;font-weight:bold">void</span> <span style="color:#ff0086;font-weight:bold">InjectDll</span>(<span style="color:#fb660a;font-weight:bold">const</span> HANDLE hProcess, <span style="color:#fb660a;font-weight:bold">const</span> <span style="color:#cdcaa9;font-weight:bold">char</span>* dllPath)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    LPVOID lpBaseAddress = VirtualAllocEx(hProcess, NULL, strlen(dllPath), MEM_COMMIT | MEM_RESERVE, PAGE_READWRITE);
+</span></span><span style="display:flex;"><span>    LPVOID lpStartAddress = GetProcAddress(GetModuleHandle(<span style="color:#0086d2">L</span><span style="color:#0086d2">&#34;kernel32.dll&#34;</span>), <span style="color:#0086d2">&#34;LoadLibraryA&#34;</span>);
+</span></span><span style="display:flex;"><span>   
+</span></span><span style="display:flex;"><span>    WriteProcessMemory(hProcess, lpBaseAddress, dllPath, strlen(dllPath), <span style="color:#fb660a;font-weight:bold">nullptr</span>);
+</span></span><span style="display:flex;"><span>    CreateRemoteThread(hProcess, <span style="color:#fb660a;font-weight:bold">nullptr</span>, <span style="color:#0086f7;font-weight:bold">0</span>, (LPTHREAD_START_ROUTINE)lpStartAddress, lpBaseAddress, <span style="color:#0086f7;font-weight:bold">0</span>, <span style="color:#fb660a;font-weight:bold">nullptr</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Avec Syswhispers (donc les syscalls), cela donnera :</p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#ff0007;background-color:#0f140f;font-weight:bold;font-style:italic">#include</span> <span style="color:#ff0007;background-color:#0f140f;font-weight:bold;font-style:italic">&lt;Windows.h&gt;</span><span style="color:#ff0007;background-color:#0f140f;font-weight:bold;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#ff0007;background-color:#0f140f;font-weight:bold;font-style:italic">#include</span> <span style="color:#ff0007;background-color:#0f140f;font-weight:bold;font-style:italic">&#34;syscalls.h&#34; // Import the generated header.</span><span style="color:#ff0007;background-color:#0f140f;font-weight:bold;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#ff0007;background-color:#0f140f;font-weight:bold;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#cdcaa9;font-weight:bold">void</span> <span style="color:#ff0086;font-weight:bold">InjectDll</span>(<span style="color:#fb660a;font-weight:bold">const</span> HANDLE hProcess, <span style="color:#fb660a;font-weight:bold">const</span> <span style="color:#cdcaa9;font-weight:bold">char</span>* dllPath)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    HANDLE hThread = NULL;
+</span></span><span style="display:flex;"><span>    LPVOID lpAllocationStart = <span style="color:#fb660a;font-weight:bold">nullptr</span>;
+</span></span><span style="display:flex;"><span>    SIZE_T szAllocationSize = strlen(dllPath);
+</span></span><span style="display:flex;"><span>    LPVOID lpStartAddress = GetProcAddress(GetModuleHandle(<span style="color:#0086d2">L</span><span style="color:#0086d2">&#34;kernel32.dll&#34;</span>), <span style="color:#0086d2">&#34;LoadLibraryA&#34;</span>);
+</span></span><span style="display:flex;"><span>   
+</span></span><span style="display:flex;"><span>    NtAllocateVirtualMemory(hProcess, &amp;lpAllocationStart, <span style="color:#0086f7;font-weight:bold">0</span>, (PULONG)&amp;szAllocationSize, MEM_COMMIT | MEM_RESERVE, PAGE_READWRITE);
+</span></span><span style="display:flex;"><span>    NtWriteVirtualMemory(hProcess, lpAllocationStart, (PVOID)dllPath, strlen(dllPath), <span style="color:#fb660a;font-weight:bold">nullptr</span>);
+</span></span><span style="display:flex;"><span>    NtCreateThreadEx(&amp;hThread, GENERIC_EXECUTE, NULL, hProcess, lpStartAddress, lpAllocationStart, FALSE, <span style="color:#0086f7;font-weight:bold">0</span>, <span style="color:#0086f7;font-weight:bold">0</span>, <span style="color:#0086f7;font-weight:bold">0</span>, <span style="color:#fb660a;font-weight:bold">nullptr</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Ce qui a changé, c&rsquo;est que <code>VirtualAllocEx</code> a été remplacé par le syscall <code>NtAllocateVirtualMemory</code>, <code>WriteProcessMemory</code> par <code>NtWriteVirtualMemory</code> et <code>CreateRemoteThread</code> par <code>NtCreateThreadEx</code>.</p>
+<p>Et là vous me direz &ldquo;mais attend tonton Sh0ck, certains arguments sont différents ?&rdquo;</p>
+<p>Ha bah oui, pour utiliser les APIs non documentées, c&rsquo;est à vous de chercher les bons arguments à utiliser en fonction de la non documentation (oui elle est pas censée être documentée) mais elle est quand même disponible ici :</p>
+<p><a href="http://undocumented.ntinternals.net/">http://undocumented.ntinternals.net/</a></p>
+<p>Prenons l&rsquo;exemple de l&rsquo;appel de <code>VirtualAllocEx</code> documenté sur le site de Microsoft :</p>
+<p><a href="https://docs.microsoft.com/en-us/windows/win32/api/memoryapi/nf-memoryapi-virtualallocex#syntax">https://docs.microsoft.com/en-us/windows/win32/api/memoryapi/nf-memoryapi-virtualallocex#syntax</a></p>
+<p>On peut voir qu&rsquo;elle prend en arguments <em>In</em> un <code>HANDLE hProcess</code>, en <em>In_opt</em> une <code>LPVOID lpAddress</code>, en <em>In</em> un <code>SIZE_T dwSize</code>, et 2 DWORD <code>flAllocationType et flProtect</code>.</p>
+<p>En cherchant dans la documentation non documentée on tombe sur la description de l&rsquo;appel <code>NtAllocateVirtualMemory</code> :</p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span>NtAllocateVirtualMemory(
+</span></span><span style="display:flex;"><span>  _In_ HANDLE               ProcessHandle,
+</span></span><span style="display:flex;"><span>  _In_out_ PVOID            *BaseAddress,
+</span></span><span style="display:flex;"><span>  _In_ ULONG                ZeroBits,
+</span></span><span style="display:flex;"><span>  _In_out_ PULONG           RegionSize,
+</span></span><span style="display:flex;"><span>  _In_ ULONG                AllocationType,
+</span></span><span style="display:flex;"><span>  _In_ ULONG                Protect );
+</span></span></code></pre></div><p>Ce qui nous permet d&rsquo;adapter notre code avec les bons arguments attendus, et c&rsquo;est valable pour toutes les autres fonctions.</p>
+<p>Si jamais vous débutez et que vous ne comprenez pas comment adapter ces fonctions, je recommande de lire des tutoriaux sur du game hacking, c&rsquo;est de cette façon que j&rsquo;ai appris, c&rsquo;est ludique et ça permet de mieux comprendre comment fonctionne l&rsquo;allocation de la mémoire sur Windows et ça reste relativement proche du développement de malwares.</p>
+<p>Maintenant que nous avons vu Syswhispers première version, quelle est la différence avec la version 2 disponible ici :</p>
+<p><a href="https://github.com/jthuraisamy/SysWhispers2">https://github.com/jthuraisamy/SysWhispers2</a></p>
+<p>Ou la version pour x86 disponible ici : <a href="https://github.com/mai1zhi2/SysWhispers2_x86">https://github.com/mai1zhi2/SysWhispers2_x86</a></p>
+<p>Cela reste assez similaire sauf que cette version n&rsquo;utilise plus la table de j00ru mais elle utilise à la place la méthode &ldquo;Sorting by System call Address&rdquo; de <code>modexpblog</code> :</p>
+<p><a href="https://www.mdsec.co.uk/2020/12/bypassing-user-mode-hooks-and-direct-invocation-of-system-calls-for-red-teams/">https://www.mdsec.co.uk/2020/12/bypassing-user-mode-hooks-and-direct-invocation-of-system-calls-for-red-teams/</a></p>
+<p>Cette méthode permet de parser l&rsquo;<code>Export Address Table (EAT)</code> du module ntdll.dll afin de localiser toutes les fonctions qui commencent par &ldquo;Zw&rdquo; et remplace &ldquo;Zw&rdquo; par &ldquo;Nt&rdquo; avant de générer les hashs des différentes fonctions afin de les appeler ensuite.</p>
+<p>Ce qui permet de ne pas avoir à préciser la version de Windows pendant la génération du stub.</p>
+<p>Syswhispers2 a aussi le grand avantage de ne pas charger une nouvelle copie de ntdll.dll.</p>
+<p>Il existe aussi 2 versions pour utiliser Syswhispers dans des BOF Cobalt-Strike :</p>
+<p>Une développée par <code>Outflank</code> pour Syswhispers1 : <a href="https://github.com/outflanknl/InlineWhispers">https://github.com/outflanknl/InlineWhispers</a></p>
+<p>Et la seconde version pour Syswhispers2 développée par moi même : <a href="https://github.com/Sh0ckFR/InlineWhispers2">https://github.com/Sh0ckFR/InlineWhispers2</a></p>
+<p>D&rsquo;autres variantes sont également disponibles publiquement sur GitHub.</p>
+<h2 id="crédits">
+  Crédits
+  <a class="heading-link" href="#cr%c3%a9dits">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h2>
+<p>Un grand merci à Paul Laîné (@am0nsec) pour la relecture de cet article <a href="https://twitter.com/am0nsec">https://twitter.com/am0nsec</a></p>
+
+  </article>
+</section>
+
+  
+
+      </div>
+
+      <footer class="footer">
+</footer>
+
+    </main>
+
+    
+      
+      <script src="/js/coder.min.8fb86376a16e684af472a329aef502dbebcfab65ce264e9750d144912947c602.js" integrity=""></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+  </body>
+
+</html>
