@@ -122,7 +122,7 @@
       </h1>
     </header>
 
-    <p>Tout d&rsquo;abord, vous me pardonnerez pour le titre de l&rsquo;article, effectivement, durant mes recherches sur du <code>DLL Hijacking</code> un peu plus poussé que dans cet article, j&rsquo;avais l&rsquo;impression que Windows me faisait tourner en bourique, d&rsquo;où ce titre peu glorieux car j&rsquo;ai fail de nombreuses fois.</p>
+    <p>Tout d&rsquo;abord, vous me pardonnerez pour le titre de l&rsquo;article, effectivement, durant mes recherches sur du <code>DLL Hijacking</code> un peu plus poussées que dans cet article, j&rsquo;avais l&rsquo;impression que Windows me faisait tourner en bourique, d&rsquo;où ce titre peu glorieux car j&rsquo;ai fail de nombreuses fois.</p>
 <p>Nous allons tout de même voir la base dans cet article, le but ici est de vous donner un aperçu de ce qu&rsquo;est le DLL Hijacking et en quoi il peut être utile durant un exercice <code>Red-Team</code>, bien entendu tout comme moi, vous pourrez ensuite aller plus loin en vous intéressant au sujet, la technique n&rsquo;étant pas nouvelle, il y a tout de même pas assez de ressources à mon sens sur le sujet et donc beaucoup à faire.</p>
 <p><img src="/images/martine-dll-hijacking.jpg" alt="Sh0ckFR DLL Hijacking Martine"></p>
 <h2 id="quest-ce-que-le-dll-hijacking-">
@@ -160,7 +160,7 @@
 </span></span></code></pre></div><p>C&rsquo;est bien beau mais j&rsquo;en fais quoi de ma DLL Martine ?</p>
 <p>Pour l&rsquo;exemple, imaginez un programme <code>toto.exe</code> qui va au lancement charger sa DLL <code>tata.dll</code> pour effectuer une opération comme créer un fichier sur le disque avec une fonction du genre <code>CreateFile</code>.</p>
 <p>Le but du DLL Hijacking est de se faire passer pour <code>tata.dll</code> via notre propre fichier DLL et ainsi exécuter notre code à la place de la fonction <code>CreateFile</code>.</p>
-<p>Ce qui permet à un attaquant de d&rsquo;utiliser un programme légitime voir même certifié par une autorité afin d&rsquo;exécuter du code malveillant, cela ne vous rappelle rien ?</p>
+<p>Ce qui permet à un attaquant d&rsquo;utiliser un programme légitime voir même certifié par une autorité afin d&rsquo;exécuter du code malveillant, cela ne vous rappelle rien ?</p>
 <p>Un petit indice : <a href="https://cyberint.com/blog/research/solarwinds-supply-chain-attack/">https://cyberint.com/blog/research/solarwinds-supply-chain-attack/</a></p>
 <h2 id="cas-concret">
   Cas concret
@@ -171,7 +171,7 @@
 <p>Nous allons prendre comme exemple <code>nslookup.exe</code> qui est un binaire natif présent sur Windows 10 et qui a été modifié pour la dernière fois en 2019.</p>
 <p>Pour tester un DLL Hijacking, nous allons copier l&rsquo;exécutable dans un répertoire vide et tenter de l&rsquo;exécuter une première fois :</p>
 <p><img src="/images/dll-hijacking1.png" alt="Sh0ckFR DLL Hijacking 1"></p>
-<p>Dans mon cas je peux voir le nom de fournisseur d&rsquo;accès Internet et l&rsquo;adresse de ma box.</p>
+<p>Dans mon cas je peux voir le nom de mon fournisseur d&rsquo;accès Internet et l&rsquo;adresse de ma box.</p>
 <p>Et voilà ! fin de l&rsquo;article merci d&rsquo;être passé ! non je déconne :)</p>
 <p>Nous allons maintenant nous intéresser aux fonctions dont à besoin le binaire pour fonctionner, pour cela nous allons utiliser l&rsquo;utilitaire <code>dumpbin.exe</code> disponible avec Visual Studio via le <code>x64 Native Command Tools</code>.</p>
 <div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>dumpbin /imports nslookup.exe
@@ -210,7 +210,7 @@
 </span></span><span style="display:flex;"><span>                          45 DnsFreeConfigStructure
 </span></span><span style="display:flex;"><span>                          75 DnsQueryConfigAllocEx
 </span></span><span style="display:flex;"><span>    ...
-</span></span></code></pre></div><p>Comme vous pouvez le voir, beaucoup de dépendances demandées par le binaire, notamment des librairies classiques qu&rsquo;on retrouve un peu partout comme <code>msvcrt.dll</code> dont les fonctions ne peuvent pas vraiment être détournées.</p>
+</span></span></code></pre></div><p>Comme vous pouvez le voir, beaucoup de dépendances demandées par le binaire, notamment des librairies classiques qu&rsquo;on retrouve un peu partout comme <code>msvcrt.dll</code> dont les fonctions ne peuvent pas vraiment être détournées car faisant parties du système d&rsquo;exploitation.</p>
 <p>Cependant on peut voir que des librairies comme <code>DNSAPI.dll</code> sont disponibles et que 2 fonctions <code>DnsFreeConfigStructure</code> et <code>DnsQueryConfigAllocEx</code> sont demandées par le programme.</p>
 <p>Windows contient une clé de registre nommée <code>SafeDllSearchMode</code> disponible dans <code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager</code>.</p>
 <p>Quand notre programme est lancé, Windows va dire au programme en fonction de si cette clé est active ou non d&rsquo;aller chercher ses dépendances dans cet ordre.</p>

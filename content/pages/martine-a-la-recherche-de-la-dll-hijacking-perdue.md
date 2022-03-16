@@ -8,7 +8,7 @@ tags = [
 ]
 +++
 
-Tout d'abord, vous me pardonnerez pour le titre de l'article, effectivement, durant mes recherches sur du `DLL Hijacking` un peu plus poussé que dans cet article, j'avais l'impression que Windows me faisait tourner en bourique, d'où ce titre peu glorieux car j'ai fail de nombreuses fois.
+Tout d'abord, vous me pardonnerez pour le titre de l'article, effectivement, durant mes recherches sur du `DLL Hijacking` un peu plus poussées que dans cet article, j'avais l'impression que Windows me faisait tourner en bourique, d'où ce titre peu glorieux car j'ai fail de nombreuses fois.
 
 Nous allons tout de même voir la base dans cet article, le but ici est de vous donner un aperçu de ce qu'est le DLL Hijacking et en quoi il peut être utile durant un exercice `Red-Team`, bien entendu tout comme moi, vous pourrez ensuite aller plus loin en vous intéressant au sujet, la technique n'étant pas nouvelle, il y a tout de même pas assez de ressources à mon sens sur le sujet et donc beaucoup à faire.
 
@@ -53,7 +53,7 @@ Pour l'exemple, imaginez un programme `toto.exe` qui va au lancement charger sa 
 
 Le but du DLL Hijacking est de se faire passer pour `tata.dll` via notre propre fichier DLL et ainsi exécuter notre code à la place de la fonction `CreateFile`.
 
-Ce qui permet à un attaquant de d'utiliser un programme légitime voir même certifié par une autorité afin d'exécuter du code malveillant, cela ne vous rappelle rien ?
+Ce qui permet à un attaquant d'utiliser un programme légitime voir même certifié par une autorité afin d'exécuter du code malveillant, cela ne vous rappelle rien ?
 
 Un petit indice : https://cyberint.com/blog/research/solarwinds-supply-chain-attack/
 
@@ -65,7 +65,7 @@ Pour tester un DLL Hijacking, nous allons copier l'exécutable dans un répertoi
 
 ![Sh0ckFR DLL Hijacking 1](/images/dll-hijacking1.png)
 
-Dans mon cas je peux voir le nom de fournisseur d'accès Internet et l'adresse de ma box.
+Dans mon cas je peux voir le nom de mon fournisseur d'accès Internet et l'adresse de ma box.
 
 Et voilà ! fin de l'article merci d'être passé ! non je déconne :)
 
@@ -114,7 +114,7 @@ File Type: EXECUTABLE IMAGE
     ...
 ```
 
-Comme vous pouvez le voir, beaucoup de dépendances demandées par le binaire, notamment des librairies classiques qu'on retrouve un peu partout comme `msvcrt.dll` dont les fonctions ne peuvent pas vraiment être détournées.
+Comme vous pouvez le voir, beaucoup de dépendances demandées par le binaire, notamment des librairies classiques qu'on retrouve un peu partout comme `msvcrt.dll` dont les fonctions ne peuvent pas vraiment être détournées car faisant parties du système d'exploitation.
 
 Cependant on peut voir que des librairies comme `DNSAPI.dll` sont disponibles et que 2 fonctions `DnsFreeConfigStructure` et `DnsQueryConfigAllocEx` sont demandées par le programme.
 
