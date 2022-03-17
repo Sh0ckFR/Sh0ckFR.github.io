@@ -120,7 +120,7 @@ Cependant on peut voir que des librairies comme `DNSAPI.dll` sont disponibles et
 
 Windows contient une clé de registre nommée `SafeDllSearchMode` disponible dans `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager`.
 
-Quand notre programme est lancé, Windows va dire au programme en fonction de si cette clé est active ou non d'aller chercher ses dépendances dans cet ordre.
+Quand notre programme est lancé, Windows va dire au programme de chercher ses dépendances dans cet ordre si cette clé est active ou non.
 
 Si le `SafeDllSearchMode` est actif :
 

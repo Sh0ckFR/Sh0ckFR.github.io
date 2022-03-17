@@ -213,7 +213,7 @@
 </span></span></code></pre></div><p>Comme vous pouvez le voir, beaucoup de dépendances demandées par le binaire, notamment des librairies classiques qu&rsquo;on retrouve un peu partout comme <code>msvcrt.dll</code> dont les fonctions ne peuvent pas vraiment être détournées car faisant parties du système d&rsquo;exploitation.</p>
 <p>Cependant on peut voir que des librairies comme <code>DNSAPI.dll</code> sont disponibles et que 2 fonctions <code>DnsFreeConfigStructure</code> et <code>DnsQueryConfigAllocEx</code> sont demandées par le programme.</p>
 <p>Windows contient une clé de registre nommée <code>SafeDllSearchMode</code> disponible dans <code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager</code>.</p>
-<p>Quand notre programme est lancé, Windows va dire au programme en fonction de si cette clé est active ou non d&rsquo;aller chercher ses dépendances dans cet ordre.</p>
+<p>Quand notre programme est lancé, Windows va dire au programme de chercher ses dépendances dans cet ordre si cette clé est active ou non.</p>
 <p>Si le <code>SafeDllSearchMode</code> est actif :</p>
 <ul>
 <li>
