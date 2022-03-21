@@ -97,7 +97,16 @@ scriptsrc = [
   "*.disqus.com",
   "*.disquscdn.com"
 ]
-prefetchsrc = ["'self'"]
+prefetchsrc = [
+  "'self'", 
+  "'unsafe-inline'", 
+  "https://www.google-analytics.com",
+  "https://cdn.jsdelivr.net/",
+  "disqus.com",
+  "disquscdn.com",
+  "*.disqus.com",
+  "*.disquscdn.com"
+]
 # connect-src directive – defines valid targets for to XMLHttpRequest (AJAX), WebSockets or EventSource
 connectsrc = ["'self'", "https://www.google-analytics.com"]
 
