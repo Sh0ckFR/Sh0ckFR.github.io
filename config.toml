@@ -69,6 +69,120 @@ customJS = []
 # [params.googleTagManager]
 # id = "gid"
 
+# If you want to implement a Content-Security-Policy, add this section
+[params.csp]
+childsrc = [
+  "'self'", 
+  "'unsafe-inline'",
+  "https://fonts.gstatic.com",
+  "https://www.google-analytics.com",
+  "https://cdn.jsdelivr.net/",
+  "disqus.com",
+  "disquscdn.com",
+  "*.disqus.com",
+  "*.disquscdn.com"
+]
+fontsrc = [
+  "'self'", 
+  "'unsafe-inline'",
+  "https://fonts.gstatic.com",
+  "https://www.google-analytics.com",
+  "https://cdn.jsdelivr.net/",
+  "disqus.com",
+  "disquscdn.com",
+  "*.disqus.com",
+  "*.disquscdn.com"
+]
+formaction = [
+  "'self'", 
+  "'unsafe-inline'",
+  "https://fonts.gstatic.com",
+  "https://www.google-analytics.com",
+  "https://cdn.jsdelivr.net/",
+  "disqus.com",
+  "disquscdn.com",
+  "*.disqus.com",
+  "*.disquscdn.com"
+]
+framesrc = [
+  "'self'", 
+  "'unsafe-inline'",
+  "https://fonts.gstatic.com",
+  "https://www.google-analytics.com",
+  "https://cdn.jsdelivr.net/",
+  "disqus.com",
+  "disquscdn.com",
+  "*.disqus.com",
+  "*.disquscdn.com"
+]
+imgsrc = [
+  "'self'", 
+  "'unsafe-inline'",
+  "https://fonts.gstatic.com",
+  "https://www.google-analytics.com",
+  "https://cdn.jsdelivr.net/",
+  "disqus.com",
+  "disquscdn.com",
+  "*.disqus.com",
+  "*.disquscdn.com"
+]
+objectsrc = [
+  "'self'", 
+  "'unsafe-inline'",
+  "https://fonts.gstatic.com",
+  "https://www.google-analytics.com",
+  "https://cdn.jsdelivr.net/",
+  "disqus.com",
+  "disquscdn.com",
+  "*.disqus.com",
+  "*.disquscdn.com"
+]
+stylesrc = [
+  "'self'", 
+  "'unsafe-inline'",
+  "https://fonts.gstatic.com",
+  "https://www.google-analytics.com",
+  "https://cdn.jsdelivr.net/",
+  "disqus.com",
+  "disquscdn.com",
+  "*.disqus.com",
+  "*.disquscdn.com"
+]
+scriptsrc = [
+  "'self'", 
+  "'unsafe-inline'",
+  "https://fonts.gstatic.com",
+  "https://www.google-analytics.com",
+  "https://cdn.jsdelivr.net/",
+  "disqus.com",
+  "disquscdn.com",
+  "*.disqus.com",
+  "*.disquscdn.com"
+]
+prefetchsrc = [
+  "'self'", 
+  "'unsafe-inline'",
+  "https://fonts.gstatic.com",
+  "https://www.google-analytics.com",
+  "https://cdn.jsdelivr.net/",
+  "disqus.com",
+  "disquscdn.com",
+  "*.disqus.com",
+  "*.disquscdn.com"
+]
+# connect-src directive – defines valid targets for to XMLHttpRequest (AJAX), WebSockets or EventSource
+connectsrc = [
+  "'self'", 
+  "'unsafe-inline'",
+  "https://fonts.gstatic.com",
+  "https://www.google-analytics.com",
+  "https://cdn.jsdelivr.net/",
+  "disqus.com",
+  "disquscdn.com",
+  "*.disqus.com",
+  "*.disquscdn.com"
+]
+
 [taxonomies]
 category = "categories"
 series = "series"
