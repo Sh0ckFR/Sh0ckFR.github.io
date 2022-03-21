@@ -80,7 +80,8 @@ childsrc = [
   "disqus.com",
   "disquscdn.com",
   "*.disqus.com",
-  "*.disquscdn.com"
+  "*.disquscdn.com",
+  "*.skilljar.com"
 ]
 fontsrc = [
   "'self'", 
@@ -91,7 +92,8 @@ fontsrc = [
   "disqus.com",
   "disquscdn.com",
   "*.disqus.com",
-  "*.disquscdn.com"
+  "*.disquscdn.com",
+  "*.skilljar.com"
 ]
 formaction = [
   "'self'", 
@@ -102,67 +104,80 @@ formaction = [
   "disqus.com",
   "disquscdn.com",
   "*.disqus.com",
-  "*.disquscdn.com"
+  "*.disquscdn.com",
+  "*.skilljar.com"
 ]
 framesrc = [
   "'self'", 
-  "'unsafe-inline'", 
+  "'unsafe-inline'",
+  "https://fonts.gstatic.com",
   "https://www.google-analytics.com",
   "https://cdn.jsdelivr.net/",
   "disqus.com",
   "disquscdn.com",
   "*.disqus.com",
-  "*.disquscdn.com"
+  "*.disquscdn.com",
+  "*.skilljar.com"
 ]
 imgsrc = [
   "'self'", 
-  "'unsafe-inline'", 
+  "'unsafe-inline'",
+  "https://fonts.gstatic.com",
   "https://www.google-analytics.com",
   "https://cdn.jsdelivr.net/",
   "disqus.com",
   "disquscdn.com",
   "*.disqus.com",
-  "*.disquscdn.com"
+  "*.disquscdn.com",
+  "*.skilljar.com"
 ]
 objectsrc = [
   "'self'", 
-  "'unsafe-inline'", 
+  "'unsafe-inline'",
+  "https://fonts.gstatic.com",
   "https://www.google-analytics.com",
   "https://cdn.jsdelivr.net/",
   "disqus.com",
   "disquscdn.com",
   "*.disqus.com",
-  "*.disquscdn.com"
+  "*.disquscdn.com",
+  "*.skilljar.com"
 ]
 stylesrc = [
-  "'self'",
+  "'self'", 
   "'unsafe-inline'",
+  "https://fonts.gstatic.com",
   "https://www.google-analytics.com",
   "https://cdn.jsdelivr.net/",
   "disqus.com",
   "disquscdn.com",
   "*.disqus.com",
-  "*.disquscdn.com"
+  "*.disquscdn.com",
+  "*.skilljar.com"
 ]
 scriptsrc = [
   "'self'", 
-  "'unsafe-inline'", 
+  "'unsafe-inline'",
+  "https://fonts.gstatic.com",
   "https://www.google-analytics.com",
   "https://cdn.jsdelivr.net/",
   "disqus.com",
   "disquscdn.com",
   "*.disqus.com",
-  "*.disquscdn.com"
+  "*.disquscdn.com",
+  "*.skilljar.com"
 ]
 prefetchsrc = [
   "'self'", 
-  "'unsafe-inline'", 
+  "'unsafe-inline'",
+  "https://fonts.gstatic.com",
   "https://www.google-analytics.com",
   "https://cdn.jsdelivr.net/",
   "disqus.com",
   "disquscdn.com",
   "*.disqus.com",
-  "*.disquscdn.com"
+  "*.disquscdn.com",
+  "*.skilljar.com"
 ]
 # connect-src directive – defines valid targets for to XMLHttpRequest (AJAX), WebSockets or EventSource
 connectsrc = [
@@ -174,7 +189,8 @@ connectsrc = [
   "disqus.com",
   "disquscdn.com",
   "*.disqus.com",
-  "*.disquscdn.com"
+  "*.disquscdn.com",
+  "*.skilljar.com"
 ]
 
 [taxonomies]
