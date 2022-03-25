@@ -231,6 +231,10 @@ Cependant beaucoup de binaires ne lancent pas forcément de fenêtres à l'exéc
 
 On peut imaginer exécuter un beacon `Cobalt-Strike` à la place de notre simple MessageBox dans une situation réelle.
 
+Bien entendu, je n'allais pas vous laisser comme ça, j'ai également développé un outil qui permet d'automatiser tout ça :
+
+https://github.com/Sh0ckFR/DLLirant
+
 ## Mot de la fin
 
 Comme vous avez pu le voir, le DLL Hijacking permet notamment d'exécuter du code malveillant via des programmes légitimes et permet donc d'augmenter la furtivité d'un attaquant en particulier si celui-ci passe par un binaire signé par un éditeur.
