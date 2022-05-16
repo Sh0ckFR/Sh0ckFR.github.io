@@ -174,7 +174,14 @@
 </span></span><span style="display:flex;"><span>    <span style="color:#fb660a;font-weight:bold">case</span> DLL_PROCESS_ATTACH:
 </span></span><span style="display:flex;"><span>        Main();
 </span></span><span style="display:flex;"><span>        <span style="color:#fb660a;font-weight:bold">break</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#fb660a;font-weight:bold">case</span> DLL_THREAD_ATTACH:
+</span></span><span style="display:flex;"><span>        <span style="color:#fb660a;font-weight:bold">break</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#fb660a;font-weight:bold">case</span> DLL_THREAD_DETACH:
+</span></span><span style="display:flex;"><span>        <span style="color:#fb660a;font-weight:bold">break</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#fb660a;font-weight:bold">case</span> DLL_PROCESS_DETACH:
+</span></span><span style="display:flex;"><span>        <span style="color:#fb660a;font-weight:bold">break</span>;
 </span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#fb660a;font-weight:bold">return</span> TRUE;
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>Il suffit ensuite de renommer la DLL originale <code>DNSAPI.dll</code> en <code>proxy.dll</code> et de copier notre nouvelle librairie <code>DNSAPI.dll</code> dans le même répertoire que le programme original et vous avez donc comme résultat un DLL Proxying parfait qui ne fera pas planter l&rsquo;application originale.</p>
 <p>Bien entendu, j&rsquo;ai implémenté l&rsquo;automatisation du DLL Proxying dans <a href="https://github.com/Sh0ckFR/DLLirant">DLLirant</a> via l&rsquo;argument <code>--proxydll</code> :</p>
