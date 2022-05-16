@@ -26,7 +26,7 @@ Mais alors comment faire ?
 
 La réponse est simple, rediriger TOUTES les fonctions du programme original (donc faire un DLL hijacking sur toutes les fonctions connues).
 
-Reprenons l'exemple dans le précédent post, vous aviez vu `nslookup.exe` utilisait une librairie vulnérable au DLL Hijacking `DNSAPI.dll`, pour retrouver toutes nos fonctions il existe un programme :
+Reprenons l'exemple dans le précédent post, vous aviez vu que `nslookup.exe` utilisait une librairie vulnérable au DLL Hijacking `DNSAPI.dll`, pour retrouver toutes nos fonctions il existe un programme :
 
 http://www.nirsoft.net/utils/dllexp-x64.zip
 
