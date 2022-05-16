@@ -151,7 +151,7 @@
 </span></span></code></pre></div><p>Ce qui donne un résultat du genre :</p>
 <p><img src="/images/dll-proxying-3.png" alt="Sh0ckFR DLL Proxying"></p>
 <p>On voit que toutes les fonctions de DNSAPI.dll devront être redirigées vers une DLL nommée <code>proxy.dll</code>.</p>
-<p>Il n&rsquo;y a plus qu&rsquo;à copier les exports pour le linked afin que nous puissons créer une DLL <code>DNSAPI.dll</code> avec toutes les fonctions attendues par la DLL originale <code>DNSAPI.dll</code> :</p>
+<p>Il n&rsquo;y a plus qu&rsquo;à copier les exports pour le linker afin que nous puissons créer une DLL <code>DNSAPI.dll</code> avec toutes les fonctions attendues par la DLL originale <code>DNSAPI.dll</code> :</p>
 <div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#ff0007;background-color:#0f140f;font-weight:bold;font-style:italic">#pragma once
 </span></span></span><span style="display:flex;"><span><span style="color:#ff0007;background-color:#0f140f;font-weight:bold;font-style:italic">#pragma comment(linker,&#34;/export:AdaptiveTimeout_ClearInterfaceSpecificConfiguration=proxy.AdaptiveTimeout_ClearInterfaceSpecificConfiguration,@1&#34;)
 </span></span></span><span style="display:flex;"><span><span style="color:#ff0007;background-color:#0f140f;font-weight:bold;font-style:italic">#pragma comment(linker,&#34;/export:AdaptiveTimeout_ResetAdaptiveTimeout=proxy.AdaptiveTimeout_ResetAdaptiveTimeout,@2&#34;)
