@@ -130,7 +130,7 @@
 <p>En vrai c&rsquo;est relativement simple, ça peut crash, du moins vous pouvez bloquer l&rsquo;exécution d&rsquo;un programme et exécuter votre charge utile sans attendre de retour mais cela rend l&rsquo;application originale inutilisable.</p>
 <p>Dans un contexte où l&rsquo;application n&rsquo;est pas vraiment nécessaire pour l&rsquo;utilisateur, ça fonctionne relativement bien, mais imaginez bloquer une bibliothèque importante pour un programme de l&rsquo;utilisateur, votre charge utile fonctionnera mais l&rsquo;utilisateur ne pourra plus utiliser son application originale.</p>
 <p>Mais alors comment faire ?</p>
-<p>La réponse est simple, rediriger TOUTES les fonctions du programme original (donc faire un DLL hijacking sur toutes les fonctions connues) et garder notre fonction vulnérable pour exécuter notre charge utile.</p>
+<p>La réponse est simple, rediriger TOUTES les fonctions du programme original (donc faire un DLL hijacking sur toutes les fonctions connues).</p>
 <p>Reprenons l&rsquo;exemple dans le précédent post, vous aviez vu <code>nslookup.exe</code> utilisait une librairie vulnérable au DLL Hijacking <code>DNSAPI.dll</code>, pour retrouver toutes nos fonctions il existe un programme :</p>
 <p><a href="http://www.nirsoft.net/utils/dllexp-x64.zip">http://www.nirsoft.net/utils/dllexp-x64.zip</a></p>
 <p>On peut donc retrouver la table d&rsquo;export via ce logiciel :</p>

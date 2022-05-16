@@ -24,7 +24,7 @@ Dans un contexte où l'application n'est pas vraiment nécessaire pour l'utilisa
 
 Mais alors comment faire ?
 
-La réponse est simple, rediriger TOUTES les fonctions du programme original (donc faire un DLL hijacking sur toutes les fonctions connues) et garder notre fonction vulnérable pour exécuter notre charge utile.
+La réponse est simple, rediriger TOUTES les fonctions du programme original (donc faire un DLL hijacking sur toutes les fonctions connues).
 
 Reprenons l'exemple dans le précédent post, vous aviez vu `nslookup.exe` utilisait une librairie vulnérable au DLL Hijacking `DNSAPI.dll`, pour retrouver toutes nos fonctions il existe un programme :
 
