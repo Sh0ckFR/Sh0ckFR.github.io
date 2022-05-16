@@ -59,7 +59,7 @@ Ce qui donne un résultat du genre :
 
 On voit que toutes les fonctions de DNSAPI.dll devront être redirigées vers une DLL nommée `proxy.dll`.
 
-Il n'y a plus qu'à copier les exports pour le linked afin que nous puissons créer une DLL `DNSAPI.dll` avec toutes les fonctions attendues par la DLL originale `DNSAPI.dll` :
+Il n'y a plus qu'à copier les exports pour le linker afin que nous puissons créer une DLL `DNSAPI.dll` avec toutes les fonctions attendues par la DLL originale `DNSAPI.dll` :
 
 ```c
 #pragma once
