@@ -6,7 +6,19 @@
     <description>Recent content on Sh0ckFR&#39;s Website | CyberPunk, Born in the binary world of the computer security</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 16 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://sh0ckfr.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 03 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://sh0ckfr.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Régis et le Game Hacking</title>
+      <link>https://sh0ckfr.github.io/pages/regis-et-le-game-hacking/</link>
+      <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh0ckfr.github.io/pages/regis-et-le-game-hacking/</guid>
+      <description>Bonjour tout le monde, c&amp;rsquo;est Régis cette fois :)
+Cela vous ait sûrement déjà arrivé dans les jeux vidéos en ligne, tomber sur un joueur plus fort que vous, en étant persuadé que celui-ci trichait.
+Voir même avoir des retours de vos amis en jeu comme par exemple il triche pas c&#39;est toi le noob tu sais pas viser t&#39;as 0 skill.
+De quoi casser de belles amitiés liées depuis des années en quelques minutes, cela dit comme dirait Antoine Daniel, la batte de baseball permet également de créer des liens sociaux.</description>
+    </item>
+    
     <item>
       <title>Martin et le DLL Proxying de cristal</title>
       <link>https://sh0ckfr.github.io/pages/martin-et-le-dll-proxying-de-cristal/</link>
