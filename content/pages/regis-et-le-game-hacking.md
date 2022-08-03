@@ -142,7 +142,7 @@ Voici 2 tutorials qui expliquent le fonctionnement de tout ça sur le jeu Assaul
 
 ## Combien de temps pour apprendre tout ceci ?
 
-Il faut compter à peu près 6 mois à un an environ avec quand même un bon bagage technique en programmation, il faut savoir que personne ne vous mâchera le travail et que la communauté du game hacking est plutôt élitiste voir toxique malheureusement, c'est pour cette raison que j'ai décidé d'écrire cet article pour aider un peu les débutants et cela peut être très utile pour le développement d'outils offensifs également.
+Il faut compter à peu près 6 mois à un an environ avec quand même un bon bagage technique en programmation, il faut savoir que personne ne vous mâchera le travail et que la communauté du game hacking est plutôt élitiste voir toxique malheureusement, c'est pour cette raison que j'ai décidé d'écrire cet article pour aider un peu les débutants.
 
 Des sites référents sont cependant très utilisés pour apprendre, notamment :
 
