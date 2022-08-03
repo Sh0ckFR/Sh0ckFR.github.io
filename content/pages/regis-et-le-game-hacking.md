@@ -167,3 +167,5 @@ Je vous laisse avec une vidéo du cheat développé spécialement pour le petit,
 [https://www.youtube.com/watch?v=MmEvIvntXug](https://www.youtube.com/watch?v=MmEvIvntXug)
 
 Si bien sûr vous souhaitez que j'aille plus loin dans l'écriture d'articles de ce type là, laissez le moi savoir.
+
+EDIT: Suite à cet article, on m'a proposé de publier du code non mis à jour, je préfère que vous me contactiez dans un premier temps sur Twitter ou autre, et à ce moment-là je pourrais vous donner accès ou non suivant ce que vous faites comme activité.
