@@ -133,7 +133,7 @@ Dans ce cas pourquoi ne pas récupérer la classe complète du personnage au lie
 
 C'est là que [Reclass.NET](https://github.com/ReClassNET/ReClass.NET) rentre en jeu.
 
-Ce programmer permet notamment d'afficher des structures de données depuis un pointer et ainsi retrouver la classe complète d'une entité comme un joueur, une voiture ou tout autre objet et d'en récupérer le code C++/C# pour accéder à ces structures directement dans votre code.
+Ce programme permet notamment d'afficher des structures de données depuis un pointer et ainsi retrouver la classe complète d'une entité comme un joueur, une voiture ou tout autre objet et d'en récupérer le code C++/C# pour accéder à ces structures directement dans votre code.
 
 Voici 2 tutorials qui expliquent le fonctionnement de tout ça sur le jeu Assault Cube :
 
