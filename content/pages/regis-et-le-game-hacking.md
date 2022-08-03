@@ -137,8 +137,8 @@ Ce programmer permet notamment d'afficher des structures de données depuis un p
 
 Voici 2 tutorials qui expliquent le fonctionnement de tout ça sur le jeu Assault Cube :
 
-https://www.youtube.com/watch?v=fvv8IJGke1Q
-https://www.youtube.com/watch?v=HZsnoUWK4Do
+* https://www.youtube.com/watch?v=fvv8IJGke1Q
+* https://www.youtube.com/watch?v=HZsnoUWK4Do
 
 ## Combien de temps pour apprendre tout ceci ?
 
