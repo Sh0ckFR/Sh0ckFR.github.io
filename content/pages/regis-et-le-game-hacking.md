@@ -164,6 +164,8 @@ C'est aussi le cas sur des jeux présents sur Steam et autres plateformes, même
 
 Je vous laisse avec une vidéo du cheat développé spécialement pour le petit, qui je vous le rassure, n'est pas utilisable en ligne.
 
+{{< youtube MmEvIvntXug >}}
+
 [https://www.youtube.com/watch?v=MmEvIvntXug](https://www.youtube.com/watch?v=MmEvIvntXug)
 
 Si bien sûr vous souhaitez que j'aille plus loin dans l'écriture d'articles de ce type là, laissez le moi savoir.
