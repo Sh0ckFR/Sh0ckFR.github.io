@@ -64,7 +64,7 @@
     <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
 
-    <meta name="generator" content="Hugo 0.94.1" />
+    <meta name="generator" content="Hugo 0.97.3" />
   </head>
 
   
@@ -128,7 +128,7 @@
 <p>Voir même avoir des retours de vos amis en jeu comme par exemple <code>il triche pas c'est toi le noob tu sais pas viser t'as 0 skill</code>.</p>
 <p>De quoi casser de belles amitiés liées depuis des années en quelques minutes, cela dit comme dirait <a href="https://www.youtube.com/watch?v=YGl6Y79cB6c">Antoine Daniel, la batte de baseball permet également de créer des liens sociaux</a>.</p>
 <p>Je vous propose tout de même de voir ici si Régis est effectivement un débutant ou si les joueurs en face ont de grandes probabilités de tricher en ligne.</p>
-<p>Attention tout de même, cet article n&rsquo;a pas du tout pour vocation à détruire l&rsquo;expérience des autres joueurs en ligne, je considère que ceux qui me liront jusqu&rsquo;au bout auront une certaine maturité même si on va aller plutôt loin en abordant le cas de GTA5 par exemple, <code>il s'agit ici d'un article de recherche avant tout</code> et n&rsquo;a aucune vocation à promouvoir ce genre de pratiques, et dans tous les cas vous n&rsquo;aurez pas de codes tout prêts, il s&rsquo;agira d&rsquo;une bonne introduction pour débutants.</p>
+<p>Attention tout de même, cet article n&rsquo;a pas du tout pour vocation à détruire l&rsquo;expérience des autres joueurs en ligne, je considère que ceux qui me liront jusqu&rsquo;au bout auront une certaine maturité même si on va aller plutôt loin en abordant le cas de GTA5, <code>il s'agit ici d'un article de recherche avant tout</code> et n&rsquo;a aucune vocation à promouvoir ce genre de pratiques, et dans tous les cas vous n&rsquo;aurez pas de codes tout prêts, il s&rsquo;agira seulement d&rsquo;une bonne introduction pour débutants.</p>
 <h2 id="comment-un-cheat-logiciel-de-triche-fonctionne-til-">
   Comment un cheat (logiciel de triche) fonctionne t&rsquo;il ?
   <a class="heading-link" href="#comment-un-cheat-logiciel-de-triche-fonctionne-til-">
@@ -137,9 +137,9 @@
 </h2>
 <p>Un cheat est un programme développé comme tout autre programme, en différents languages de programmation, que cela soit du <code>C, du C++, du C#, du Java, du Python, du Rust, du Brainfuck (ouais non on va s'arrêter là)</code>.</p>
 <p>Bref vous l&rsquo;aurez compris, on peut écrire notre programme de triche dans tous les languages possibles mais concrêtement comment ça fonctionne ?</p>
-<p>Si vous avez déjà vu quelques cours en C durant vos études, vous saurez que des <code>pointers</code> sont présents dans la mémoire d&rsquo;un programme, pour les autres qui n&rsquo;ont pas eu la chance de suivre les cours barbants de comment faire un jeu vidéo en C ou recoder la libc, les pointers sont en fait des emplacements présents dans la mémoire qui représentent l&rsquo;adressse en mémoire de toutes sortes de variables (<code>integer</code> qui sont des chiffres ronds, <code>float</code> qui sont des chiffres à virgules, <code>boolean</code> qui sont des conditions &ldquo;vraies&rdquo; ou &ldquo;fausses&rdquo; etc&hellip;</p>
+<p>Si vous avez déjà vu quelques cours en C durant vos études, vous saurez que des <code>pointers</code> sont présents dans la mémoire d&rsquo;un programme, pour les autres qui n&rsquo;ont pas eu la chance de suivre les cours barbants de comment faire un jeu vidéo en C ou recoder la libc, les pointers sont en fait des emplacements présents dans la mémoire qui représentent l&rsquo;adressse en mémoire de toutes sortes de variables (<code>integer</code> qui sont des chiffres ronds, <code>float</code> qui sont des chiffres à virgules, <code>boolean</code> qui sont des conditions <code>vraies</code> ou <code>fausses</code> etc&hellip;</p>
 <p>Donc on imagine notre programme tourner (notre jeu en question), et on se représente la mémoire de celui-ci qui est une suite d&rsquo;octects (bytes, 1 byte soit 1 octect = 8 bits)</p>
-<p>Maintenant imaginons que nous souhaitons modifier ces valeurs en mémoire pour modifier par exemple le pointer de la &ldquo;vie&rdquo; de notre personnage, la &ldquo;vitesse de déplacement&rdquo; de celui-ci, voir même comment le téléporter n&rsquo;importe où dans notre monde, comment faire ? nous allons voir ça ensemble.</p>
+<p>Maintenant imaginons que nous souhaitons modifier ces valeurs en mémoire pour modifier par exemple le pointer de la <code>vie</code> de notre personnage, la <code>vitesse de déplacement</code> de celui-ci, voir même comment le téléporter n&rsquo;importe où dans notre monde, comment faire ? nous allons voir ça ensemble.</p>
 <h2 id="les-différents-types-de-cheats">
   Les différents types de cheats.
   <a class="heading-link" href="#les-diff%c3%a9rents-types-de-cheats">
@@ -158,7 +158,7 @@
     <i class="fa fa-link" aria-hidden="true"></i>
   </a>
 </h2>
-<p>Les cheats de type &ldquo;external&rdquo; ont pour vocation de modifier la mémoire du jeu ciblé de façon externe, ici on parle d&rsquo;un logiciel de triche qui va ouvrir le processus du jeu en question et modifier des pointers à la volée.</p>
+<p>Les cheats de type <code>external</code> ont pour vocation de modifier la mémoire du jeu ciblé de façon externe, ici on parle d&rsquo;un logiciel de triche qui va ouvrir le processus du jeu en question et modifier des pointers à la volée.</p>
 <p>En gros quand vous utilisez ce type de cheats, vous allez utiliser des fonctions comme <code>ReadProcessMemory</code> et des <code>WriteProcessMemory</code> ou des équivalents pour lire des pointers et modifier leurs valeurs, via le user-land (API Win32) ou kernel-land (techniques plutôt avancées à ce moment là mais c&rsquo;est possible), à voir, libre à vous d&rsquo;imaginer toutes les possibilités possibles.</p>
 <p>Exemple, dans mon jeu, il y a un pointer de type <code>integer</code> ou <code>float</code> qui va définir la vie de mon personnage, il suffit de réécrire cette valeur en question qui est souvent de <code>100</code> en integer ou <code>100.0f</code> pour un float dans la plupart des jeux afin de regénérer votre vie.</p>
 <h2 id="les-internals">
@@ -167,8 +167,9 @@
     <i class="fa fa-link" aria-hidden="true"></i>
   </a>
 </h2>
-<p>Les internals sont différents des externals, car il s&rsquo;agit là d&rsquo;injecter une librairie de type <code>DLL</code> par exemple dans un jeu, afin d&rsquo;obtenir le context courant du jeu et d&rsquo;accéder aux fonctions internes du jeu, chose qui n&rsquo;est pas possible via un cheat de type external de base.</p>
+<p>Les internals sont différents des externals, car il s&rsquo;agit là d&rsquo;injecter une librairie de type <code>DLL</code> dans un jeu, afin d&rsquo;obtenir le context courant de celui-ci et d&rsquo;accéder aux fonctions internes du jeu, chose qui n&rsquo;est pas possible via un cheat de type external de base.</p>
 <p>Exemple avec GTA5, il fonctionne avec le moteur de jeu <code>Rage Engine</code>, et spoiler alert, ça ne sera plus Rage Engine pour GTA6 mais probablement Unreal Engine 5 comme certains s&rsquo;en doutent probablement car le remaster de la trilogie fonctionne sous Unreal Engine 4.</p>
+<p>Donc il est possible d&rsquo;accéder aux fonctions internes du moteur de jeu via une librairie dite <code>injectée</code>.</p>
 <h2 id="les-semi-externals">
   Les semi-externals
   <a class="heading-link" href="#les-semi-externals">
@@ -176,7 +177,7 @@
   </a>
 </h2>
 <p>Les externals à la base comme vous l&rsquo;aurez compris ne peuvent pas accéder aux fonctions internes du jeu ciblé car il s&rsquo;agit seulement d&rsquo;intéragir avec la mémoire du jeu de façon <code>externe</code>.</p>
-<p>Ils sont souvent moins détectés que les internals mais peuvent parfois prendre plus de temps à développer contrairement aux internals (des jeux ont leur propres API internes afin de faciliter le travail des développeurs donc c&rsquo;est du pain bénit pour un internal cheat)</p>
+<p>Ils sont souvent moins détectés que les internals mais peuvent parfois prendre plus de temps à développer contrairement aux internals (des jeux ont leur propres API internes comme la Rage Engine afin de faciliter le travail des développeurs donc c&rsquo;est du pain bénit pour un internal cheat)</p>
 <p>Le but ici est en fait d&rsquo;injecter une librairie dans le jeu ciblé, et de faire communiquer la librairie injectée qui elle aura plus facilement accès aux fonctions internes du jeu afin de communiquer au programme externe l&rsquo;information souhaitée, comme une API en gros mais qui fonctionne via des <code>Named Pipes</code> ou autres.</p>
 <h2 id="okay-cest-cool-mais-tu-vas-montrer-quoi-dans-ton-article-">
   Okay, c&rsquo;est cool mais tu vas montrer quoi dans ton article ?
@@ -184,8 +185,8 @@
     <i class="fa fa-link" aria-hidden="true"></i>
   </a>
 </h2>
-<p>En fait pour créer un cheat sur un jeu vidéo, le mieux, c&rsquo;est de connaître sous quel moteur graphique le jeu tourne dans un premier temps, est-ce que c&rsquo;est du directx10, directx11, directx12 ou du Vulcan par exemple ?</p>
-<p>Une fois qu&rsquo;on connaît le moteur graphique (vous pouvez facilement le trouver dans les options du jeu par exemple), que voulez vous faire ?</p>
+<p>En fait pour créer un cheat sur un jeu vidéo, le mieux, c&rsquo;est de connaître sous quel moteur graphique le jeu tourne dans un premier temps, est-ce que c&rsquo;est du directx10, directx11, directx12 ou du Vulcan ?</p>
+<p>Une fois qu&rsquo;on connaît le moteur graphique (vous pouvez facilement le trouver dans les options du jeu), que voulez vous faire ?</p>
 <p>Vous avez 3 choix à ce moment là, partir sur un internal, un external, ou un semi external.</p>
 <p>Pour ma part, j&rsquo;aime les 3 en fonction de mes besoins, mais pour GTA5 j&rsquo;ai préféré l&rsquo;internal au départ.</p>
 <p>En gros j&rsquo;injectais une librairie dll dans le jeu directement, pour accéder à l&rsquo;API interne du Rage Engine.</p>
@@ -200,9 +201,9 @@
     <i class="fa fa-link" aria-hidden="true"></i>
   </a>
 </h2>
-<p>Si vous voulez développer un cheat <code>external</code>, vous aurez juste besoin de faire une interface graphique (GUI) en C# par exemple et accéder à la mémoire pour modifier les pointers souhaités (ReadProcessMemory / WriteProcessMemory).</p>
-<p>Si vous voulez développer un cheat <code>internal</code>, vous aurez besoin de hook des fonctions de DirectX (la librarie Kiero le fait très bien) afin d&rsquo;afficher votre propre menu en C/C++ directement en jeu afin d&rsquo;accéder à la mémoire ou directement aux fonctions internes du jeu.</p>
-<p>Et si vous voulez par exemple implémenter votre cheat sous forme d&rsquo;API afin d&rsquo;exécuter les fonctions internes depuis n&rsquo;importe quel logiciel sans rien injecter, à ce moment-là vous pouvez injecter une DLL qui pourra communiquer via des Named Pipes afin d&rsquo;exécuter des fonctions internes du jeu depuis un programme externe, il s&rsquo;agit à ce moment-là d&rsquo;un <code>semi-internal</code>.</p>
+<p>Si vous voulez développer un cheat <code>external</code>, vous aurez juste besoin de faire une interface graphique (GUI) en C# et accéder à la mémoire pour modifier les pointers souhaités (ReadProcessMemory / WriteProcessMemory).</p>
+<p>Si vous voulez développer un cheat <code>internal</code>, vous aurez besoin de hook des fonctions de DirectX (la librarie <a href="https://github.com/Rebzzel/kiero">Kiero</a> le fait très bien) afin d&rsquo;afficher votre propre menu en C/C++ directement en jeu afin d&rsquo;accéder à la mémoire ou directement aux fonctions internes du jeu.</p>
+<p>Et si vous voulez implémenter votre cheat sous forme d&rsquo;API afin d&rsquo;exécuter les fonctions internes depuis n&rsquo;importe quel logiciel sans rien injecter, à ce moment-là vous pouvez injecter une DLL qui pourra communiquer via des Named Pipes afin d&rsquo;exécuter des fonctions internes du jeu depuis un programme externe, il s&rsquo;agit à ce moment-là d&rsquo;un <code>semi-external</code>.</p>
 <h2 id="un-cas-concret">
   Un cas concret
   <a class="heading-link" href="#un-cas-concret">
@@ -266,7 +267,7 @@
 </h2>
 <p>La majorité sont aussi peu fiables oui, malgré les solutions anti-cheats existantes, des développeurs de logiciels de triche arrivent toujours avec plus ou moins de temps à contourner les protections en place.</p>
 <p>Dans le cas de GTA5 par exemple, il suffit d&rsquo;éviter d&rsquo;appeler certaines fonctions <code>natives</code> pour contourner l&rsquo;anti-cheat en place car il y a des checks sur ces natives côté serveur.</p>
-<p>C&rsquo;est aussi le cas sur des jeux présents sur Steam et autres plateformes, même si des progrès arrivent petit à petit à ce niveau là, sachez que de ma propre expérience, les jeux de tir en ligne sont par exemple extrêmement touchés par ce problème.</p>
+<p>C&rsquo;est aussi le cas sur des jeux présents sur Steam et autres plateformes, même si des progrès arrivent petit à petit à ce niveau là, sachez que de ma propre expérience, les jeux de tir en ligne sont extrêmement touchés par ce problème.</p>
 <h2 id="conclusion">
   Conclusion
   <a class="heading-link" href="#conclusion">

@@ -20,7 +20,7 @@ De quoi casser de belles amitiés liées depuis des années en quelques minutes,
 
 Je vous propose tout de même de voir ici si Régis est effectivement un débutant ou si les joueurs en face ont de grandes probabilités de tricher en ligne.
 
-Attention tout de même, cet article n'a pas du tout pour vocation à détruire l'expérience des autres joueurs en ligne, je considère que ceux qui me liront jusqu'au bout auront une certaine maturité même si on va aller plutôt loin en abordant le cas de GTA5 par exemple, `il s'agit ici d'un article de recherche avant tout` et n'a aucune vocation à promouvoir ce genre de pratiques, et dans tous les cas vous n'aurez pas de codes tout prêts, il s'agira d'une bonne introduction pour débutants.
+Attention tout de même, cet article n'a pas du tout pour vocation à détruire l'expérience des autres joueurs en ligne, je considère que ceux qui me liront jusqu'au bout auront une certaine maturité même si on va aller plutôt loin en abordant le cas de GTA5, `il s'agit ici d'un article de recherche avant tout` et n'a aucune vocation à promouvoir ce genre de pratiques, et dans tous les cas vous n'aurez pas de codes tout prêts, il s'agira seulement d'une bonne introduction pour débutants.
 
 ## Comment un cheat (logiciel de triche) fonctionne t'il ?
 
@@ -28,11 +28,11 @@ Un cheat est un programme développé comme tout autre programme, en différents
 
 Bref vous l'aurez compris, on peut écrire notre programme de triche dans tous les languages possibles mais concrêtement comment ça fonctionne ?
 
-Si vous avez déjà vu quelques cours en C durant vos études, vous saurez que des `pointers` sont présents dans la mémoire d'un programme, pour les autres qui n'ont pas eu la chance de suivre les cours barbants de comment faire un jeu vidéo en C ou recoder la libc, les pointers sont en fait des emplacements présents dans la mémoire qui représentent l'adressse en mémoire de toutes sortes de variables (`integer` qui sont des chiffres ronds, `float` qui sont des chiffres à virgules, `boolean` qui sont des conditions "vraies" ou "fausses" etc...
+Si vous avez déjà vu quelques cours en C durant vos études, vous saurez que des `pointers` sont présents dans la mémoire d'un programme, pour les autres qui n'ont pas eu la chance de suivre les cours barbants de comment faire un jeu vidéo en C ou recoder la libc, les pointers sont en fait des emplacements présents dans la mémoire qui représentent l'adressse en mémoire de toutes sortes de variables (`integer` qui sont des chiffres ronds, `float` qui sont des chiffres à virgules, `boolean` qui sont des conditions `vraies` ou `fausses` etc...
 
 Donc on imagine notre programme tourner (notre jeu en question), et on se représente la mémoire de celui-ci qui est une suite d'octects (bytes, 1 byte soit 1 octect = 8 bits)
 
-Maintenant imaginons que nous souhaitons modifier ces valeurs en mémoire pour modifier par exemple le pointer de la "vie" de notre personnage, la "vitesse de déplacement" de celui-ci, voir même comment le téléporter n'importe où dans notre monde, comment faire ? nous allons voir ça ensemble.
+Maintenant imaginons que nous souhaitons modifier ces valeurs en mémoire pour modifier par exemple le pointer de la `vie` de notre personnage, la `vitesse de déplacement` de celui-ci, voir même comment le téléporter n'importe où dans notre monde, comment faire ? nous allons voir ça ensemble.
 
 ## Les différents types de cheats.
 
@@ -44,7 +44,7 @@ Il existe 3 types de cheats (logiciels de triche) au total, nous allons les voir
 
 ## Les Externals
 
-Les cheats de type "external" ont pour vocation de modifier la mémoire du jeu ciblé de façon externe, ici on parle d'un logiciel de triche qui va ouvrir le processus du jeu en question et modifier des pointers à la volée.
+Les cheats de type `external` ont pour vocation de modifier la mémoire du jeu ciblé de façon externe, ici on parle d'un logiciel de triche qui va ouvrir le processus du jeu en question et modifier des pointers à la volée.
 
 En gros quand vous utilisez ce type de cheats, vous allez utiliser des fonctions comme `ReadProcessMemory` et des `WriteProcessMemory` ou des équivalents pour lire des pointers et modifier leurs valeurs, via le user-land (API Win32) ou kernel-land (techniques plutôt avancées à ce moment là mais c'est possible), à voir, libre à vous d'imaginer toutes les possibilités possibles.
 
@@ -52,23 +52,25 @@ Exemple, dans mon jeu, il y a un pointer de type `integer` ou `float` qui va dé
 
 ## Les Internals
 
-Les internals sont différents des externals, car il s'agit là d'injecter une librairie de type `DLL` par exemple dans un jeu, afin d'obtenir le context courant du jeu et d'accéder aux fonctions internes du jeu, chose qui n'est pas possible via un cheat de type external de base.
+Les internals sont différents des externals, car il s'agit là d'injecter une librairie de type `DLL` dans un jeu, afin d'obtenir le context courant de celui-ci et d'accéder aux fonctions internes du jeu, chose qui n'est pas possible via un cheat de type external de base.
 
 Exemple avec GTA5, il fonctionne avec le moteur de jeu `Rage Engine`, et spoiler alert, ça ne sera plus Rage Engine pour GTA6 mais probablement Unreal Engine 5 comme certains s'en doutent probablement car le remaster de la trilogie fonctionne sous Unreal Engine 4.
+
+Donc il est possible d'accéder aux fonctions internes du moteur de jeu via une librairie dite `injectée`.
 
 ## Les semi-externals
 
 Les externals à la base comme vous l'aurez compris ne peuvent pas accéder aux fonctions internes du jeu ciblé car il s'agit seulement d'intéragir avec la mémoire du jeu de façon `externe`.
 
-Ils sont souvent moins détectés que les internals mais peuvent parfois prendre plus de temps à développer contrairement aux internals (des jeux ont leur propres API internes afin de faciliter le travail des développeurs donc c'est du pain bénit pour un internal cheat)
+Ils sont souvent moins détectés que les internals mais peuvent parfois prendre plus de temps à développer contrairement aux internals (des jeux ont leur propres API internes comme la Rage Engine afin de faciliter le travail des développeurs donc c'est du pain bénit pour un internal cheat)
 
 Le but ici est en fait d'injecter une librairie dans le jeu ciblé, et de faire communiquer la librairie injectée qui elle aura plus facilement accès aux fonctions internes du jeu afin de communiquer au programme externe l'information souhaitée, comme une API en gros mais qui fonctionne via des `Named Pipes` ou autres.
 
 ## Okay, c'est cool mais tu vas montrer quoi dans ton article ?
 
-En fait pour créer un cheat sur un jeu vidéo, le mieux, c'est de connaître sous quel moteur graphique le jeu tourne dans un premier temps, est-ce que c'est du directx10, directx11, directx12 ou du Vulcan par exemple ?
+En fait pour créer un cheat sur un jeu vidéo, le mieux, c'est de connaître sous quel moteur graphique le jeu tourne dans un premier temps, est-ce que c'est du directx10, directx11, directx12 ou du Vulcan ?
 
-Une fois qu'on connaît le moteur graphique (vous pouvez facilement le trouver dans les options du jeu par exemple), que voulez vous faire ?
+Une fois qu'on connaît le moteur graphique (vous pouvez facilement le trouver dans les options du jeu), que voulez vous faire ?
 
 Vous avez 3 choix à ce moment là, partir sur un internal, un external, ou un semi external.
 
@@ -88,11 +90,11 @@ Et là vous allez me dire `Mais LOL ? donc si je fais spawn une voiture depuis m
 
 ## Allons plus loin
 
-Si vous voulez développer un cheat `external`, vous aurez juste besoin de faire une interface graphique (GUI) en C# par exemple et accéder à la mémoire pour modifier les pointers souhaités (ReadProcessMemory / WriteProcessMemory).
+Si vous voulez développer un cheat `external`, vous aurez juste besoin de faire une interface graphique (GUI) en C# et accéder à la mémoire pour modifier les pointers souhaités (ReadProcessMemory / WriteProcessMemory).
 
-Si vous voulez développer un cheat `internal`, vous aurez besoin de hook des fonctions de DirectX (la librarie Kiero le fait très bien) afin d'afficher votre propre menu en C/C++ directement en jeu afin d'accéder à la mémoire ou directement aux fonctions internes du jeu.
+Si vous voulez développer un cheat `internal`, vous aurez besoin de hook des fonctions de DirectX (la librarie [Kiero](https://github.com/Rebzzel/kiero) le fait très bien) afin d'afficher votre propre menu en C/C++ directement en jeu afin d'accéder à la mémoire ou directement aux fonctions internes du jeu.
 
-Et si vous voulez par exemple implémenter votre cheat sous forme d'API afin d'exécuter les fonctions internes depuis n'importe quel logiciel sans rien injecter, à ce moment-là vous pouvez injecter une DLL qui pourra communiquer via des Named Pipes afin d'exécuter des fonctions internes du jeu depuis un programme externe, il s'agit à ce moment-là d'un `semi-internal`.
+Et si vous voulez implémenter votre cheat sous forme d'API afin d'exécuter les fonctions internes depuis n'importe quel logiciel sans rien injecter, à ce moment-là vous pouvez injecter une DLL qui pourra communiquer via des Named Pipes afin d'exécuter des fonctions internes du jeu depuis un programme externe, il s'agit à ce moment-là d'un `semi-external`.
 
 ## Un cas concret
 
@@ -158,7 +160,7 @@ La majorité sont aussi peu fiables oui, malgré les solutions anti-cheats exist
 
 Dans le cas de GTA5 par exemple, il suffit d'éviter d'appeler certaines fonctions `natives` pour contourner l'anti-cheat en place car il y a des checks sur ces natives côté serveur.
 
-C'est aussi le cas sur des jeux présents sur Steam et autres plateformes, même si des progrès arrivent petit à petit à ce niveau là, sachez que de ma propre expérience, les jeux de tir en ligne sont par exemple extrêmement touchés par ce problème.
+C'est aussi le cas sur des jeux présents sur Steam et autres plateformes, même si des progrès arrivent petit à petit à ce niveau là, sachez que de ma propre expérience, les jeux de tir en ligne sont extrêmement touchés par ce problème.
 
 ## Conclusion
 
