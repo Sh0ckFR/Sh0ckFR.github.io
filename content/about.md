@@ -17,6 +17,6 @@ Je ne communiquerais pas des solutions clés en main, c'est à vous ensuite de c
 Voici la liste des contributeurs qui ont vérifié les articles présents sur mon blog :
 
 - [Paul Laîné (am0nsec)](https://twitter.com/am0nsec)
-- [Ottersec](https://twitter.com/ottersecx)
+- [Ottersec](https://twitter.com/sneaky_ottersec)
 
 ![Sh0ckFR banner](/images/banner.png)
