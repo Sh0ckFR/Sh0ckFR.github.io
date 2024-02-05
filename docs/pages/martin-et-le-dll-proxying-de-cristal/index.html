@@ -15,8 +15,7 @@
     <meta name="description" content="Martin et le DLL Proxying de cristal">
     <meta name="keywords" content="redteam, red-team, infosec, security, pentest, forensics, ">
 
-    <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Martin et le DLL Proxying de cristal"/>
+    <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Martin et le DLL Proxying de cristal"/>
 <meta name="twitter:description" content="Martin et le DLL Proxying de cristal"/>
 
     <meta property="og:title" content="Martin et le DLL Proxying de cristal" />
@@ -41,7 +40,7 @@
     
       
       
-      <link rel="stylesheet" href="/css/coder.min.d9fddbffe6f27e69985dc5fe0471cdb0e57fbf4775714bc3d847accb08f4a1f6.css" integrity="" crossorigin="anonymous" media="screen" />
+      <link rel="stylesheet" href="/css/coder.min.8eda8590f1409ec9c9e1ff18fd3934c84f779e456d23ea050ceb72e1e6410433.css" integrity="" crossorigin="anonymous" media="screen" />
     
 
     
@@ -64,7 +63,7 @@
     <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
 
-    <meta name="generator" content="Hugo 0.97.3" />
+    <meta name="generator" content="Hugo 0.122.0">
   </head>
 
   
@@ -162,17 +161,17 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#ff0007;background-color:#0f140f;font-weight:bold;font-style:italic">#pragma comment(linker,&#34;/export:DeRefQueryBlobEx=proxy.DeRefQueryBlobEx,@7&#34;)
 </span></span></span><span style="display:flex;"><span><span style="color:#ff0007;background-color:#0f140f;font-weight:bold;font-style:italic"></span>...
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#cdcaa9;font-weight:bold">int</span> Main()
+</span></span><span style="display:flex;"><span><span style="color:#cdcaa9;font-weight:bold">int</span> <span style="color:#ff0086;font-weight:bold">Main</span>()
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    <span style="color:#080;background-color:#0f140f;font-style:italic">// Your payload code.
 </span></span></span><span style="display:flex;"><span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>BOOL WINAPI DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpReserved)
+</span></span><span style="display:flex;"><span>BOOL WINAPI <span style="color:#ff0086;font-weight:bold">DllMain</span>(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpReserved)
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    <span style="color:#fb660a;font-weight:bold">switch</span> (fdwReason)
 </span></span><span style="display:flex;"><span>    {
 </span></span><span style="display:flex;"><span>    <span style="color:#fb660a;font-weight:bold">case</span> DLL_PROCESS_ATTACH:
-</span></span><span style="display:flex;"><span>        Main();
+</span></span><span style="display:flex;"><span>        <span style="color:#ff0086;font-weight:bold">Main</span>();
 </span></span><span style="display:flex;"><span>        <span style="color:#fb660a;font-weight:bold">break</span>;
 </span></span><span style="display:flex;"><span>    <span style="color:#fb660a;font-weight:bold">case</span> DLL_THREAD_ATTACH:
 </span></span><span style="display:flex;"><span>        <span style="color:#fb660a;font-weight:bold">break</span>;
@@ -208,7 +207,7 @@
 
     
       
-      <script src="/js/coder.min.8fb86376a16e684af472a329aef502dbebcfab65ce264e9750d144912947c602.js" integrity=""></script>
+      <script src="/js/coder.min.9cf2dbf9b6989ef8eae941ffb4231c26d1dc026bca38f1d19fdba50177d8a9ac.js" integrity=""></script>
     
 
     

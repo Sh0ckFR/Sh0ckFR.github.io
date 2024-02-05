@@ -8,7 +8,7 @@ aliases = ["about"]
 
 Bonjour,
 
-Après avoir passé quelques années en tant que Consultant en sécurité informatique, je suis maintenant opérateur Red Team dans une banque française.
+Après avoir passé quelques années en tant que Consultant en sécurité informatique, je suis maintenant opérateur Red Team.
 
 Ceci est mon blog, j'espère que vous apprendrez des trucs utiles dessus, si jamais vous observez des erreurs ou des choses utiles à me remonter, n'hésitez pas, j'offre le café !
 

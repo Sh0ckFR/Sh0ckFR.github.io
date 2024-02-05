@@ -209,12 +209,12 @@ weight = 1
 url = "https://twitter.com/Sh0ckFR"
 target = "_blank"
 
-[[params.social]]
-name = "LinkedIn"
-icon = "fa fa-2x fa-linkedin"
-weight = 3
-url = "https://www.linkedin.com/in/yann-f/"
-target = "_blank"
+#[[params.social]]
+#name = "LinkedIn"
+#icon = "fa fa-2x fa-linkedin"
+#weight = 3
+#url = "https://www.linkedin.com/in/yann-f/"
+#target = "_blank"
 
 #[[params.social]]
 #name = "Medium"
