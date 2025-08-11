@@ -91,7 +91,7 @@ Où `fake_cache_data` serait utilisé pour tromper des équipes SOC avec une fau
 
 Il y a encore plus surnois, c'est de découper la payload en plusieurs POST avec des leurres à côté, mais je n'ai jamais encore vu trop ça dans un C2 public ou commercial, ça reste compliqué à mettre en place niveau code en réalité.
 
-Il est aussi possible et ce qu'on voit la plupart du temps, d'avoir l'implant qui communiquer son `SERVER_RESPONSE_PREPEND` et `SERVER_RESPONSE_APPEND` c'est concrêtement la même chose pour que le `POST prepend` et `POST append` mais ça concerne la réponse du serveur, exemple :
+Il est aussi possible et ce qu'on voit la plupart du temps, d'avoir l'implant qui communique son `SERVER_RESPONSE_PREPEND` et `SERVER_RESPONSE_APPEND` c'est concrêtement la même chose pour que le `POST prepend` et `POST append` mais ça concerne la réponse du serveur, exemple :
 
 ```html
 <html><body><p>PAYLOAD</p></body></html>
