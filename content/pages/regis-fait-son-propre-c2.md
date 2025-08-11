@@ -131,7 +131,7 @@ Concrêtement le `Timer` est le nombre de secondes que vous voulez que l'implant
 
 Le `Jitter` est souvent noté en pourcentage, en gros pour éviter d'avoir un `Timer` fixe et récurrent, le `Jitter` lui va rajouter un délai supplémentaire genre 20 ou 50% du temps en plus consacré au `Timer` de façon random, de ce fait, vos requêtes de l'implant deviennent plus aléatoires, ce qui empêche des détections par rapport à la récurrence des requêtes (si votre implant communique toutes les 5 secondes de façon fixe c'est suspect par exemple mais si votre implant communique toutes les 5 secondes + un pourcentage aléatoire, ça l'est moins).
 
-## À cette étape là qu'est que cela nous explique ?
+## À cette étape là qu'est ce que cela nous explique ?
 
 À cette étape là, vous pouvez comprendre à minima que la base de données est entièrement côté serveur pour 90% des données.
 
