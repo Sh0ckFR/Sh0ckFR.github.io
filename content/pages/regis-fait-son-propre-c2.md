@@ -147,7 +147,7 @@ De ce fait, vous n'aurez pas de problèmes de synchronisation entre clients si v
 
 Oui c'est bien beau d'implémenter les commandes de bases `cd` `ls` ou whatever, il y a des choses à comprendre, notamment le fait de ne pas utiliser des commandes trop connues dans votre C2 style `whoami` pour ce genre de commandes, il est préférable de produire l'équivalent sans appeler les commandes systèmes de base qui peuvent être très monitorées.
 
-Pour cela, il est plus intéressant de se passer sur du code open source Windows comme ReactOS pour éviter de déclencher des alertes de base, mieux comprendre la source ReactOS vous permettra de comprendre qu'il est possible de faire des actions vraiment offensives sans être détecté, pour cela il y a pas de secret, il faut se plonger dans la source et comprendre les mécanismes.
+Pour cela, il est plus intéressant de se baser sur du code open source Windows comme ReactOS pour éviter de déclencher des alertes de base, mieux comprendre la source ReactOS vous permettra de comprendre qu'il est possible de faire des actions vraiment offensives sans être détecté, pour cela il y a pas de secret, il faut se plonger dans la source et comprendre les mécanismes.
 
 C'est le cas par exemple pour `whoami`, ou bien faire un dump lsass sans appeler la fonction `minidumpwritedump` directement pour dumper lsass, des multiples exemples sont présents.
 
