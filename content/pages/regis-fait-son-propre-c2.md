@@ -117,7 +117,7 @@ Le serveur attend et traite les requêtes de l'implant, il a une base de donnée
 
 ## De quoi est composé le client ?
 
-Le client est l'interface graphique (ou CLI peut importe) d'un red teamer, qui ne sera jamais exposée sur internet, elle sert à communiquer directement les commandes ou informations que l'implant devra exécuter via le serveur.
+Le client est l'interface graphique (ou CLI peu importe) d'un red teamer, qui ne sera jamais exposée sur internet, elle sert à communiquer directement les commandes ou informations que l'implant devra exécuter via le serveur.
 
 Ce client va interroger le serveur pour avoir la liste des commandes passées sur celui-ci et voir si il a obtenu une réponse pour chacune d'entre elles et les afficher.
 
