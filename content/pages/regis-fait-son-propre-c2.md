@@ -44,7 +44,7 @@ Il s'avère que plus on utilise un C2 et plus il est utilisé dans d'autres équ
 
 Il y a parfois aussi des leaks qui sont distribués sur internet, crackés via des licences officielles et utilisées par des threat actors donc on peut retrouver facilement un Cobalt-Strike, un BruteRatel ou autre dans la nature en torrent dans une ancienne version qui peut permettre de détecter les nouvelles versions, bref c'est le jeu du chat et de la souris.
 
-Il se trouve que dans le cadre d'une red team qui a déjà utilisée et qui connaît bien ces frameworks C2, elle peut décider de développer son propre C2 pour des accès initiaux voir une solution complète afin d'avoir une base complètement clean par les antivirus et EDRs et customisable.
+Il se trouve que dans le cadre d'une red team qui a déjà utilisée et qui connaît bien ces frameworks C2, elle peut décider de développer son propre C2 pour des accès initiaux voir une solution complète afin d'avoir une base complètement clean pour les antivirus et EDRs et customisable.
 
 Dans notre équipe, c'est un peu notre cas, on apprécie utiliser des nouvelles méthodes donc dans ce cadre là, totalement encadré et légitime bien entendu, nous décidons de développer ce genre de solutions.
 
