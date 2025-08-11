@@ -175,4 +175,6 @@ Je mettrais à jour cet article pour expliquer tout ça dans une seconde partie 
 
 Je reviendrais aussi sur la communication, le fait de varier les requêtes POST avec les différents headers pour noyer encore plus la communication.
 
+Mais aussi comment bien gérer sa base de données côté serveur, car si vous partez dans tous les sens sans relations entre tables, c'est mort d'avance.
+
 Des bisous :)
