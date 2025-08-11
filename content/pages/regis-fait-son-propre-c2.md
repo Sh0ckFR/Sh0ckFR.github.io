@@ -173,4 +173,6 @@ Nous il nous faut un canal socks5 au complet, fonctionnel et sans crashes.
 
 Je mettrais à jour cet article pour expliquer tout ça dans une seconde partie car on rentre clairement dans l'aspect technique avancé de la chose.
 
+Je reviendrais aussi sur la communication, le fait de varier les requêtes POST avec les différents headers pour noyer encore plus la communication.
+
 Des bisous :)
