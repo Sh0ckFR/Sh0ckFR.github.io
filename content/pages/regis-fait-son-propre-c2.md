@@ -165,7 +165,7 @@ Imaginez vous avez votre implant qui fonctionne sur une machine nommée `toto`, 
 
 Le but du socks5 est d'utiliser la machine `toto` dont vous avez accès en passant par le réseau interne pour accéder au réseau interne et donc accéder au serveur `tata`.
 
-Au final vous utiliser la connexion de `toto` en socks5 pour atteindre le serveur interne `tata`.
+Au final vous utilisez la connexion de `toto` en socks5 pour atteindre le serveur interne `tata`.
 
 Le problème qu'il se pose, c'est que votre implant communique avec vous seulement via des requêtes POST de base.
 
