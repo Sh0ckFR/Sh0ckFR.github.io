@@ -113,7 +113,7 @@ Et le `SERVER_RESPONSE_APPEND` serait :
 
 ## De quoi est composé le serveur ?
 
-Le serveur attend et traite les requêtes de l'implant, il a une base de données disponible qui lui permet d'enregistrer les commandes qu'il a reçu, les commandes qu'il a pas encore traîté "is_executed?" et les résultats si "is_executed est égal à False, l'implant exécute la commande et renvoie le résultat, à ce moment là is_executed passe à true avec le résultat de la commande" donc l'implant sait du coup qu'il ne doit plus la traiter.
+Le serveur attend et traite les requêtes de l'implant, il a une base de données disponible qui lui permet d'enregistrer les commandes qu'il a reçu, les commandes qu'il a pas encore traîté `is_executed?` et les résultats si `is_executed` est égal à `False`, l'implant exécute la commande et renvoie le résultat, à ce moment là is_executed passe à true avec le résultat de la commande" donc l'implant sait du coup qu'il ne doit plus la traiter.
 
 ## De quoi est composé le client ?
 
