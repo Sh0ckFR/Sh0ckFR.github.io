@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+
+    
+      <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests; block-all-mixed-content; default-src 'self'; child-src 'self' 'unsafe-inline' https://fonts.gstatic.com https://www.google-analytics.com https://cdn.jsdelivr.net/ disqus.com disquscdn.com *.disqus.com *.disquscdn.com; font-src 'self' 'unsafe-inline' https://fonts.gstatic.com https://www.google-analytics.com https://cdn.jsdelivr.net/ disqus.com disquscdn.com *.disqus.com *.disquscdn.com; form-action 'self' 'unsafe-inline' https://fonts.gstatic.com https://www.google-analytics.com https://cdn.jsdelivr.net/ disqus.com disquscdn.com *.disqus.com *.disquscdn.com; frame-src 'self' 'unsafe-inline' https://fonts.gstatic.com https://www.google-analytics.com https://cdn.jsdelivr.net/ disqus.com disquscdn.com *.disqus.com *.disquscdn.com; img-src 'self' 'unsafe-inline' https://fonts.gstatic.com https://www.google-analytics.com https://cdn.jsdelivr.net/ disqus.com disquscdn.com *.disqus.com *.disquscdn.com; object-src 'self' 'unsafe-inline' https://fonts.gstatic.com https://www.google-analytics.com https://cdn.jsdelivr.net/ disqus.com disquscdn.com *.disqus.com *.disquscdn.com; style-src 'self' 'unsafe-inline' https://fonts.gstatic.com https://www.google-analytics.com https://cdn.jsdelivr.net/ disqus.com disquscdn.com *.disqus.com *.disquscdn.com; script-src 'self' 'unsafe-inline' https://fonts.gstatic.com https://www.google-analytics.com https://cdn.jsdelivr.net/ disqus.com disquscdn.com *.disqus.com *.disquscdn.com; prefetch-src 'self' 'unsafe-inline' https://fonts.gstatic.com https://www.google-analytics.com https://cdn.jsdelivr.net/ disqus.com disquscdn.com *.disqus.com *.disquscdn.com; connect-src 'self' 'unsafe-inline' https://fonts.gstatic.com https://www.google-analytics.com https://cdn.jsdelivr.net/ disqus.com disquscdn.com *.disqus.com *.disquscdn.com;">
+
+    
+
+    <meta name="author" content="Sh0ckFR">
+    <meta name="description" content="Régis fait son propre C2">
+    <meta name="keywords" content="redteam, red-team, infosec, security, pentest, forensics, ">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Régis fait son propre C2"/>
+<meta name="twitter:description" content="Régis fait son propre C2"/>
+
+    <meta property="og:title" content="Régis fait son propre C2" />
+<meta property="og:description" content="Régis fait son propre C2" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://sh0ckfr.github.io/pages/regis-fait-son-propre-c2/" /><meta property="article:section" content="pages" />
+<meta property="article:published_time" content="2025-08-11T00:00:00+00:00" />
+<meta property="article:modified_time" content="2025-08-11T00:00:00+00:00" />
+
+
+    <title>
+  Régis fait son propre C2 · Sh0ckFR&#39;s Website | CyberPunk, Born in the binary world of the computer security
+</title>
+
+    
+      <link rel="canonical" href="https://sh0ckfr.github.io/pages/regis-fait-son-propre-c2/">
+    
+
+    <link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+    
+      
+      
+      <link rel="stylesheet" href="/css/coder.min.8eda8590f1409ec9c9e1ff18fd3934c84f779e456d23ea050ceb72e1e6410433.css" integrity="" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+      
+        
+        
+        <link rel="stylesheet" href="/css/coder-dark.min.002ee2378e14c7a68f1f0a53d9694ed252090987c4e768023fac694a4fc5f793.css" integrity="" crossorigin="anonymous" media="screen" />
+      
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+    <meta name="generator" content="Hugo 0.119.0">
+  </head>
+
+  
+  
+    
+  
+  <body class="preload-transitions colorscheme-dark">
+    
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        <li class="navigation-item">
+          <a class="navigation-link" href="/">Accueil</a>
+        </li>
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/pages/">Articles</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/about/">À propos</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container page">
+  <article>
+    <header>
+      <h1 class="title">
+        <a class="title-link" href="https://sh0ckfr.github.io/pages/regis-fait-son-propre-c2/">
+          Régis fait son propre C2
+        </a>
+      </h1>
+    </header>
+
+    <p>Hello tout le monde, ça fait un moment ^^</p>
+<p>Aujourd&rsquo;hui on va parler C2, comment bien penser son propre C2 avant de le développer car je me suis lancé sur le sujet, et après beaucoup beaucoup trop d&rsquo;erreurs, j&rsquo;ai maintenant une base solide sur le sujet car c&rsquo;est probablement un des sujets les plus techniques à réaliser en programmation et je pèse mes mots, ne vous lancez pas là dedans si vous n&rsquo;avez pas un très bon niveau en programmation sauf si vous aimez le challenge :')</p>
+<h2 id="petit-historique">
+  Petit Historique
+  <a class="heading-link" href="#petit-historique">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h2>
+<p><img src="/images/c2-1.png" alt="Sh0ckFR C2 dev"></p>
+<p>Déjà il faut se rendre compte que la notion de C2 n&rsquo;est pas nouvelle, effectivement comme vous pouvez le voir en screenshot, il s&rsquo;agit de NetBus, le tout premier vrai <code>command and control</code> créer en 1997 par le Suédois Carl-Fredrik Neikter.</p>
+<p>Ensuite Back Orifice a vu le jour, qui a été développé par le célèbre groupe de hackers Cult of the Dead Cow (cDc).</p>
+<p>Puis ensuite Sub7 en 1999 qui était un C2 plus avancé que Back Orifice mais surtout utilisé par des scripts kiddies de l&rsquo;époque.</p>
+<p>Par la suite, les gens ont connu ProRat en 2002, à l&rsquo;époque c&rsquo;était surtout des logiciels rats pour faire chier son prochain clairement (coucou je t&rsquo;ouvre le lecteur cd-rom à distance je suis trop un leet).</p>
+<p>En 2008, DarkComet est ensuite sorti, par Jean-Pierre Lesueur (DarkCoderSC), tellement bien conçu pour l&rsquo;époque que le régime syrien l&rsquo;a utilisé contre des dissidents.</p>
+<p>Le développeur pour des raisons éthiques, suite à l&rsquo;usage politique de son C2 avait décidé d&rsquo;arrêter son développement, ce que je trouve totalement admirable (merci DarkCoderSC pour ça, t&rsquo;es le goat, la bise à toi toussa -&gt; Oui on s&rsquo;est fréquenté un peu IRL, cool guy).</p>
+<p><img src="/images/c2-2.png" alt="Sh0ckFR C2 dev"></p>
+<p>Puis ensuite la référence absolue des C2 pour l&rsquo;époque, est sorti en 2012, il s&rsquo;agit de Cobalt-Strike développé par Raphael Mudge qui est encore vendu aujourd&rsquo;hui car effectivement il s&rsquo;agit d&rsquo;un C2 professionnel orienté pour les équipes Red Team.</p>
+<p><img src="/images/c2-3.png" alt="Sh0ckFR C2 dev"></p>
+<p>Aujourd&rsquo;hui, la plupart des équipes Red Team possèdent différents C2, que ça soit Cobalt-Strike, BruteRatel, Mythic C2, Havoc ou bien d&rsquo;autres.</p>
+<p>Chacuns ont leurs avantages et inconvéniants mais ce qui est intéressant pour une équipe Red Team, c&rsquo;est de varier ses TTP (Tactics, Techniques and Procedures).</p>
+<p>Ce qui veut dire entraîner les équipes défensives à voir des choses nouvelles à chaque fois pour être capable de mettre en place des règles de sécurité polyvalentes et efficaces par rapport aux nouvelles menaces et aux nouveaux modes d&rsquo;attaques.</p>
+<p>Il s&rsquo;avère que plus on utilise un C2 et plus il est utilisé dans d&rsquo;autres équipes red team autour du globe, plus il est facilement identifiable car les équipes défensives arrivent à identifier leurs comportements ou les identifier via des particularités précises vu que c&rsquo;est toujours le même logiciel vendu à des red teams.</p>
+<p>Il y a parfois aussi des leaks qui sont distribués sur internet, crackés via des licences officielles et utilisées par des threat actors donc on peut retrouver facilement un Cobalt-Strike, un BruteRatel ou autre dans la nature en torrent dans une ancienne version qui peut permettre de détecter les nouvelles versions, bref c&rsquo;est le jeu du chat et de la souris.</p>
+<p>Il se trouve que dans le cadre d&rsquo;une red team qui a déjà utilisée et qui connaît bien ces frameworks C2, elle peut décider de développer son propre C2 pour des accès initiaux voir une solution complète afin d&rsquo;avoir une base complètement clean par les antivirus et EDRs et customisable.</p>
+<p>Dans notre équipe, c&rsquo;est un peu notre cas, on apprécie utiliser des nouvelles méthodes donc dans ce cadre là, totalement encadré et légitime bien entendu, nous décidons de développer ce genre de solutions.</p>
+<p>Nous ne pouvons pas bien entendu partager des sources complètes, car forcément utilisées par des threats actors ensuite.</p>
+<p>Dans cet article, je vais cependant expliquer comment développer son propre C2 fonctionnel sans pour autant divulguer les sources complètes, ce qui sera certainement utile pour des équipes red team voulant faire de la R&amp;D sur le sujet.</p>
+<h2 id="comment-se-compose-larchitecture-dun-c2">
+  Comment se compose l&rsquo;architecture d&rsquo;un C2
+  <a class="heading-link" href="#comment-se-compose-larchitecture-dun-c2">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h2>
+<p>Concrêtement, de base un C2 est composé de quoi ?</p>
+<ul>
+<li>
+<p>L&rsquo;implant : Donc le binaire malveillant qui va communiquer toutes les X secondes vers différents domaines (CDNs ou autre), il se chargera via des requêtes POST par exemple de demander <code>coucou je dois exécuter quoi comme commande ?</code></p>
+</li>
+<li>
+<p>Le serveur : Lui sera hébergé sur en local non exposé mais qui écoutera les demandes de l&rsquo;implant via un redirector exposé sur le net (je reviendrais sur le sujet pour expliquer le principe d&rsquo;un redirector) <code>coucou je vois ce que tu me demandes, actuellement le client t'a demandé d'exécuter telle action donc fais le et renvoie moi le résultat ensuite</code></p>
+</li>
+<li>
+<p>Le client : Le client est l&rsquo;interface graphique, non accessible depuis internet, il devra être connecté via un VPN par exemple au serveur, il aura pour but de dire au serveur <code>coucou je veux que l'implant de madame michue fasse telle action sur son poste et une fois que tu as la réponse, il faut que tu me la renvoie pour que je l'affiche pour le red teamer</code></p>
+</li>
+</ul>
+<p><img src="/images/c2-4.png" alt="Sh0ckFR C2 dev"></p>
+<h2 id="de-quoi-est-composé-limplant-en-lui-même-">
+  De quoi est composé l&rsquo;implant en lui même ?
+  <a class="heading-link" href="#de-quoi-est-compos%c3%a9-limplant-en-lui-m%c3%aame-">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h2>
+<p>De base il s&rsquo;agit d&rsquo;une grande <code>boucle while(1)</code> qui toutes les X secondes va demander via une requête POST la plupart du temps sur un redirector en lui demandant <code>coucou on t'a demandé à ce que je passe des commandes ?</code> si c&rsquo;est le cas, il exécutera ces commandes et renverra ensuite le résultat par une autre requête POST <code>coucou j'ai exécuté ce que tu m'as dis, voici la réponse</code>.</p>
+<p>En pseudo code rapide ça donnerait quelque chose du genre :</p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#fb660a;font-weight:bold">while</span>(<span style="color:#0086f7;font-weight:bold">1</span>) {
+</span></span><span style="display:flex;"><span>    std::string command = POST(url, userAgent, postData);
+</span></span><span style="display:flex;"><span>    std::string result = exec(command);
+</span></span><span style="display:flex;"><span>    POST(url, userAgent, resultPostData);
+</span></span><span style="display:flex;"><span>    Sleep(TIMER + JITTER);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Alors là vous me direz, oui mais faut que ça soit chiffré un minimum et noyé dans la masse ?</p>
+<p>Et bien vous avez raison, en fait la plupart du temps, ce que font les C2 classiques, c&rsquo;est qu&rsquo;ils mettent un POST prepend et un POST append avec du chiffrement de leur payload et de l&rsquo;encodage pour éviter les problèmes d&rsquo;UTF-8 par exemple, ils encodent ça en base64 ou ils font du HEX, il y a plein de méthodes différentes pour gérer ce cas là mais concrêtement la requête POST dans le body pourrait donner quelque chose comme :</p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>id=1&amp;fake_cache_data=BLABLA&amp;cache_data=PAYLOAD&amp;output=json
+</span></span></code></pre></div><p>Où <code>fake_cache_data</code> serait utilisé pour tromper des équipes SOC avec une fausse payload, et la vraie payload se trouverait par exemple dans <code>cache_data</code>.</p>
+<p>Il y a encore plus surnois, c&rsquo;est de découper la payload en plusieurs POST avec des leurres à côté, mais je n&rsquo;ai jamais encore vu trop ça dans un C2 public ou commercial, ça reste compliqué à mettre en place niveau code en réalité.</p>
+<p>Il est aussi possible et ce qu&rsquo;on voit la plupart du temps, d&rsquo;avoir l&rsquo;implant qui communiquer son <code>SERVER_RESPONSE_PREPEND</code> et <code>SERVER_RESPONSE_APPEND</code> c&rsquo;est concrêtement la même chose pour que le <code>POST prepend</code> et <code>POST append</code> mais ça concerne la réponse du serveur, exemple :</p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#fb660a;font-weight:bold">html</span>&gt;&lt;<span style="color:#fb660a;font-weight:bold">body</span>&gt;&lt;<span style="color:#fb660a;font-weight:bold">p</span>&gt;PAYLOAD&lt;/<span style="color:#fb660a;font-weight:bold">p</span>&gt;&lt;/<span style="color:#fb660a;font-weight:bold">body</span>&gt;&lt;/<span style="color:#fb660a;font-weight:bold">html</span>&gt;
+</span></span></code></pre></div><p>La PAYLOAD se trouve à ce moment là entre son <code>SERVER_RESPONSE_PREPEND</code> et <code>SERVER_RESPONSE_APPEND</code> qui sont les balises html de réponse du serveur.</p>
+<p>Ici le <code>SERVER_RESPONSE_PREPEND</code> serait :</p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#fb660a;font-weight:bold">html</span>&gt;&lt;<span style="color:#fb660a;font-weight:bold">body</span>&gt;&lt;<span style="color:#fb660a;font-weight:bold">p</span>&gt;
+</span></span></code></pre></div><p>Et le <code>SERVER_RESPONSE_APPEND</code> serait :</p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;/<span style="color:#fb660a;font-weight:bold">p</span>&gt;&lt;/<span style="color:#fb660a;font-weight:bold">body</span>&gt;&lt;/<span style="color:#fb660a;font-weight:bold">html</span>&gt;
+</span></span></code></pre></div><h2 id="de-quoi-est-composé-le-serveur-">
+  De quoi est composé le serveur ?
+  <a class="heading-link" href="#de-quoi-est-compos%c3%a9-le-serveur-">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h2>
+<p>Le serveur attend et traite les requêtes de l&rsquo;implant, il a une base de données disponible qui lui permet d&rsquo;enregistrer les commandes qu&rsquo;il a reçu, les commandes qu&rsquo;il a pas encore traîté &ldquo;is_executed?&rdquo; et les résultats si &ldquo;is_executed est égal à False, l&rsquo;implant exécute la commande et renvoie le résultat, à ce moment là is_executed passe à true avec le résultat de la commande&rdquo; donc l&rsquo;implant sait du coup qu&rsquo;il ne doit plus la traiter.</p>
+<h2 id="de-quoi-est-composé-le-client-">
+  De quoi est composé le client ?
+  <a class="heading-link" href="#de-quoi-est-compos%c3%a9-le-client-">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h2>
+<p>Le client est l&rsquo;interface graphique (ou CLI peut importe) d&rsquo;un red teamer, qui ne sera jamais exposée sur internet, elle sert à communiquer directement les commandes ou informations que l&rsquo;implant devra exécuter via le serveur.</p>
+<p>Ce client va interroger le serveur pour avoir la liste des commandes passées sur celui-ci et voir si il a obtenu une réponse pour chacune d&rsquo;entre elles et les afficher.</p>
+<h2 id="cest-quoi-un-redirector-">
+  C&rsquo;est quoi un redirector ?
+  <a class="heading-link" href="#cest-quoi-un-redirector-">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h2>
+<p>Un redirector est en gros un serveur web type apache ou nginx la plupart du temps qui va attendre des requêtes en http ou https, et qui va les rediriger en interne via un VPN par exemple à votre serveur C2, vu qu&rsquo;on ne veut pas exposer le serveur C2 sur le net, le redirector lui est exposé mais on s&rsquo;en moque pas mal au final car ça reste un serveur web classique, le plus souvent hébergé via un domaine catégorisé, et ce domaine là pour éviter d&rsquo;apparaître trop souvent en fonction des hits des pics de connexions, peut être camouflé via des CDNs.</p>
+<h2 id="quest-ce-que-le-timer-et-le-jitter-">
+  Qu&rsquo;est-ce que le Timer et le Jitter ?
+  <a class="heading-link" href="#quest-ce-que-le-timer-et-le-jitter-">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h2>
+<p>Concrêtement le <code>Timer</code> est le nombre de secondes que vous voulez que l&rsquo;implant fasse une requête au redirector, qui lui va transmettre la demande au serveur C2 hébergé en interne.</p>
+<p>Le <code>Jitter</code> est souvent noté en pourcentage, en gros pour éviter d&rsquo;avoir un <code>Timer</code> fixe et récurrent, le <code>Jitter</code> lui va rajouter un délai supplémentaire genre 20 ou 50% du temps en plus consacré au <code>Timer</code> de façon random, de ce fait, vos requêtes de l&rsquo;implant deviennent plus aléatoires, ce qui empêche des détections par rapport à la récurrence des requêtes (si votre implant communique toutes les 5 secondes de façon fixe c&rsquo;est suspect par exemple mais si votre implant communique toutes les 5 secondes + un pourcentage aléatoire, ça l&rsquo;est moins).</p>
+<h2 id="à-cette-étape-là-quest-que-cela-nous-explique-">
+  À cette étape là qu&rsquo;est que cela nous explique ?
+  <a class="heading-link" href="#%c3%a0-cette-%c3%a9tape-l%c3%a0-quest-que-cela-nous-explique-">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h2>
+<p>À cette étape là, vous pouvez comprendre à minima que la base de données est entièrement côté serveur pour 90% des données.</p>
+<p>Côté client, vous allez juste retrouver les différents serveurs auquel vous vous êtes connecté mais rien de plus.</p>
+<p><code>Pourquoi ?</code></p>
+<p>Car si vous voulez des interactions multi utilisateurs, il faut bien comprendre que c&rsquo;est votre serveur, et non vous en tant que client qui allait synchroniser les données, les clients se connectent au serveur, mais c&rsquo;est à lui de prendre en compte chaque requête de chaque client.</p>
+<p>De ce fait, vous n&rsquo;aurez pas de problèmes de synchronisation entre clients si vous avez bien pensé à ça.</p>
+<h2 id="une-partie-opsec-des-commandes-de-base">
+  Une partie OPSEC des commandes de base
+  <a class="heading-link" href="#une-partie-opsec-des-commandes-de-base">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h2>
+<p>Oui c&rsquo;est bien beau d&rsquo;implémenter les commandes de bases <code>cd</code> <code>ls</code> ou whatever, il y a des choses à comprendre, notamment le fait de ne pas utiliser des commandes trop connues dans votre C2 style <code>whoami</code> pour ce genre de commandes, il est préférable de produire l&rsquo;équivalent sans appeler les commandes systèmes de base qui peuvent être très monitorées.</p>
+<p>Pour cela, il est plus intéressant de se passer sur du code open source Windows comme ReactOS pour éviter de déclencher des alertes de base, mieux comprendre la source ReactOS vous permettra de comprendre qu&rsquo;il est possible de faire des actions vraiment offensives sans être détecté, pour cela il y a pas de secret, il faut se plonger dans la source et comprendre les mécanismes.</p>
+<p>C&rsquo;est le cas par exemple pour <code>whoami</code>, ou bien faire un dump lsass sans appeler la fonction <code>minidumpwritedump</code> directement pour dumper lsass, des multiples exemples sont présents.</p>
+<p>Des projets OpenSource plus évolués sont disponibles sur github, plus vous comprenez les potentielles détections côté SOC, plus vous serez efficace en red team et donc en capacité de développer un outil C2 totalement opérationnel.</p>
+<p>Cela demande clairement d&rsquo;avoir au moins touché à un SIEM une fois, donc avoir une petite expérience blue à minima et voir la télémétrie présente dans l&rsquo;EDR (dans le bouzin comme on dit).</p>
+<h2 id="la-fonctionnalité-la-plus-hardcore-dans-un-c2-le-socks5">
+  La fonctionnalité la plus hardcore dans un C2, le socks5.
+  <a class="heading-link" href="#la-fonctionnalit%c3%a9-la-plus-hardcore-dans-un-c2-le-socks5">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h2>
+<p>On y vient, la fonctionnalité socks5 est très utilisée nos jours par des red teamers, car elle permet de créer un tunnel socks5 pour utiliser le réseau disponible d&rsquo;une machine distante infectée afin de joindre d&rsquo;autres machines qui ne sont pas accessibles depuis Internet.</p>
+<p><code>Comment ça fonctionne ?</code></p>
+<p>Imaginez vous avez votre implant qui fonctionne sur une machine nommée <code>toto</code>, vous avez accès à cette machine mais pas au serveur <code>tata</code> directement qui est accessible que depuis le réseau interne de <code>toto</code>.</p>
+<p>Le but du socks5 est d&rsquo;utiliser la machine <code>toto</code> dont vous avez accès en passant par le réseau interne pour accéder au réseau interne et donc accéder au serveur <code>tata</code>.</p>
+<p>Au final vous utiliser la connexion de <code>toto</code> en socks5 pour atteindre le serveur interne <code>tata</code>.</p>
+<p>Le problème qu&rsquo;il se pose, c&rsquo;est que votre implant communique avec vous seulement via des requêtes POST de base.</p>
+<p>Nous il nous faut un canal socks5 au complet, fonctionnel et sans crashes.</p>
+<p>Je mettrais à jour cet article pour expliquer tout ça dans une seconde partie car on rentre clairement dans l&rsquo;aspect technique avancé de la chose.</p>
+<p>Des bisous :)</p>
+
+  </article>
+</section>
+
+  
+
+      </div>
+
+      <footer class="footer">
+</footer>
+
+    </main>
+
+    
+      
+      <script src="/js/coder.min.9cf2dbf9b6989ef8eae941ffb4231c26d1dc026bca38f1d19fdba50177d8a9ac.js" integrity=""></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+  </body>
+
+</html>

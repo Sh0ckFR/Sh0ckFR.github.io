@@ -6,49 +6,84 @@
     <description>Recent content on Sh0ckFR&#39;s Website | CyberPunk, Born in the binary world of the computer security</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 03 Aug 2022 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://sh0ckfr.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 11 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://sh0ckfr.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Régis fait son propre C2</title>
+      <link>https://sh0ckfr.github.io/pages/regis-fait-son-propre-c2/</link>
+      <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh0ckfr.github.io/pages/regis-fait-son-propre-c2/</guid>
+      <description>Hello tout le monde, ça fait un moment ^^
+Aujourd&amp;rsquo;hui on va parler C2, comment bien penser son propre C2 avant de le développer car je me suis lancé sur le sujet, et après beaucoup beaucoup trop d&amp;rsquo;erreurs, j&amp;rsquo;ai maintenant une base solide sur le sujet car c&amp;rsquo;est probablement un des sujets les plus techniques à réaliser en programmation et je pèse mes mots, ne vous lancez pas là dedans si vous n&amp;rsquo;avez pas un très bon niveau en programmation sauf si vous aimez le challenge :&#39;)</description>
+    </item>
+    
     <item>
       <title>Régis et le Game Hacking</title>
       <link>https://sh0ckfr.github.io/pages/regis-et-le-game-hacking/</link>
       <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
+      
       <guid>https://sh0ckfr.github.io/pages/regis-et-le-game-hacking/</guid>
-      <description>Bonjour tout le monde, c&amp;rsquo;est Régis cette fois :)&#xA;Cela vous ait sûrement déjà arrivé dans les jeux vidéos en ligne, tomber sur un joueur plus fort que vous, en étant persuadé que celui-ci trichait.&#xA;Voir même avoir des retours de vos amis en jeu comme par exemple il triche pas c&#39;est toi le noob tu sais pas viser t&#39;as 0 skill.&#xA;De quoi casser de belles amitiés liées depuis des années en quelques minutes, cela dit comme dirait Antoine Daniel, la batte de baseball permet également de créer des liens sociaux.</description>
+      <description>Bonjour tout le monde, c&amp;rsquo;est Régis cette fois :)
+Cela vous ait sûrement déjà arrivé dans les jeux vidéos en ligne, tomber sur un joueur plus fort que vous, en étant persuadé que celui-ci trichait.
+Voir même avoir des retours de vos amis en jeu comme par exemple il triche pas c&#39;est toi le noob tu sais pas viser t&#39;as 0 skill.
+De quoi casser de belles amitiés liées depuis des années en quelques minutes, cela dit comme dirait Antoine Daniel, la batte de baseball permet également de créer des liens sociaux.</description>
     </item>
+    
     <item>
       <title>Martin et le DLL Proxying de cristal</title>
       <link>https://sh0ckfr.github.io/pages/martin-et-le-dll-proxying-de-cristal/</link>
       <pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate>
+      
       <guid>https://sh0ckfr.github.io/pages/martin-et-le-dll-proxying-de-cristal/</guid>
-      <description>Bonjour à tous et à toutes, pour faire suite à mon article Martine à la recherche de la DLL Hijacking perdue je vous propose aujourd&amp;rsquo;hui un article sur le DLL Proxying.&#xA;Comme vous vous en doutez, le gars au centre c&amp;rsquo;est Martin et il ne savait pas trop ce qu&amp;rsquo;il lui arrivait avec ce pouvoir entre les mains, ici c&amp;rsquo;est pareil.&#xA;Vous avez pu comprendre les mécanismes du DLL Hijacking dans mon précédent post, mais je n&amp;rsquo;avais pas évoqué un point important.</description>
+      <description>Bonjour à tous et à toutes, pour faire suite à mon article Martine à la recherche de la DLL Hijacking perdue je vous propose aujourd&amp;rsquo;hui un article sur le DLL Proxying.
+Comme vous vous en doutez, le gars au centre c&amp;rsquo;est Martin et il ne savait pas trop ce qu&amp;rsquo;il lui arrivait avec ce pouvoir entre les mains, ici c&amp;rsquo;est pareil.
+Vous avez pu comprendre les mécanismes du DLL Hijacking dans mon précédent post, mais je n&amp;rsquo;avais pas évoqué un point important.</description>
     </item>
+    
     <item>
       <title>Martine à la recherche de la DLL Hijacking perdue</title>
       <link>https://sh0ckfr.github.io/pages/martine-a-la-recherche-de-la-dll-hijacking-perdue/</link>
       <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
+      
       <guid>https://sh0ckfr.github.io/pages/martine-a-la-recherche-de-la-dll-hijacking-perdue/</guid>
-      <description>Tout d&amp;rsquo;abord, vous me pardonnerez pour le titre de l&amp;rsquo;article, effectivement, durant mes recherches sur du DLL Hijacking un peu plus poussées que dans cet article, j&amp;rsquo;avais l&amp;rsquo;impression que Windows me faisait tourner en bourique, d&amp;rsquo;où ce titre peu glorieux car j&amp;rsquo;ai fail de nombreuses fois.&#xA;Nous allons tout de même voir la base dans cet article, le but ici est de vous donner un aperçu de ce qu&amp;rsquo;est le DLL Hijacking et en quoi il peut être utile durant un exercice Red-Team, bien entendu tout comme moi, vous pourrez ensuite aller plus loin en vous intéressant au sujet, la technique n&amp;rsquo;étant pas nouvelle, il y a tout de même pas assez de ressources à mon sens sur le sujet et donc beaucoup à faire.</description>
+      <description>Tout d&amp;rsquo;abord, vous me pardonnerez pour le titre de l&amp;rsquo;article, effectivement, durant mes recherches sur du DLL Hijacking un peu plus poussées que dans cet article, j&amp;rsquo;avais l&amp;rsquo;impression que Windows me faisait tourner en bourique, d&amp;rsquo;où ce titre peu glorieux car j&amp;rsquo;ai fail de nombreuses fois.
+Nous allons tout de même voir la base dans cet article, le but ici est de vous donner un aperçu de ce qu&amp;rsquo;est le DLL Hijacking et en quoi il peut être utile durant un exercice Red-Team, bien entendu tout comme moi, vous pourrez ensuite aller plus loin en vous intéressant au sujet, la technique n&amp;rsquo;étant pas nouvelle, il y a tout de même pas assez de ressources à mon sens sur le sujet et donc beaucoup à faire.</description>
     </item>
+    
     <item>
       <title>Les différences entre Red Team et Pentest</title>
       <link>https://sh0ckfr.github.io/pages/les-differences-entre-red-team-et-pentest/</link>
       <pubDate>Fri, 21 Jan 2022 00:00:00 +0000</pubDate>
+      
       <guid>https://sh0ckfr.github.io/pages/les-differences-entre-red-team-et-pentest/</guid>
-      <description>Qui n&amp;rsquo;a jamais entendu autour de lui &amp;ldquo;Je fais du Red Team, du vrai Red Team !&amp;rdquo; ?&#xA;Cette phrase, je l&amp;rsquo;ai souvent entendu dans des conférences, des soirées infosec et j&amp;rsquo;en passe, là où il fallait placer Red Team dans une conversation, à coup sûr ça faisait mouche.&#xA;Mais qu&amp;rsquo;en est-il vraiment ? est-ce du pentest ? est-ce que le pentest peut être considéré comme Red Team ? cet article n&amp;rsquo;a pas vocation à être technique et a pour but de démystifier la chose et expliquer clairement ce qu&amp;rsquo;il en est.</description>
+      <description>Qui n&amp;rsquo;a jamais entendu autour de lui &amp;ldquo;Je fais du Red Team, du vrai Red Team !&amp;rdquo; ?
+Cette phrase, je l&amp;rsquo;ai souvent entendu dans des conférences, des soirées infosec et j&amp;rsquo;en passe, là où il fallait placer Red Team dans une conversation, à coup sûr ça faisait mouche.
+Mais qu&amp;rsquo;en est-il vraiment ? est-ce du pentest ? est-ce que le pentest peut être considéré comme Red Team ? cet article n&amp;rsquo;a pas vocation à être technique et a pour but de démystifier la chose et expliquer clairement ce qu&amp;rsquo;il en est.</description>
     </item>
+    
     <item>
       <title>Introduction à Syswhispers1 et Syswhispers2</title>
       <link>https://sh0ckfr.github.io/pages/introduction-syswhispers/</link>
       <pubDate>Sun, 02 Jan 2022 00:00:00 +0000</pubDate>
+      
       <guid>https://sh0ckfr.github.io/pages/introduction-syswhispers/</guid>
-      <description>Bon, commençons par le commencement, Syswhispers c&amp;rsquo;est quoi ?&#xA;Il s&amp;rsquo;agit en fait d&amp;rsquo;une méthode permettant d&amp;rsquo;effectuer des appels dits &amp;ldquo;direct system calls&amp;rdquo;.&#xA;L&amp;rsquo;instruction syscall est utilisée pour faire la transition entre le User-Mode (UM) et le Kernel-Mode (KM) en utilisant un identifiant 16-bits WORD depuis le registre EAX.&#xA;Cet identifiant étant un index dans la structure interne de la table System Service Descriptor Table (SSDT) dans la pile d&amp;rsquo;exécution du Kernel.</description>
+      <description>Bon, commençons par le commencement, Syswhispers c&amp;rsquo;est quoi ?
+Il s&amp;rsquo;agit en fait d&amp;rsquo;une méthode permettant d&amp;rsquo;effectuer des appels dits &amp;ldquo;direct system calls&amp;rdquo;.
+L&amp;rsquo;instruction syscall est utilisée pour faire la transition entre le User-Mode (UM) et le Kernel-Mode (KM) en utilisant un identifiant 16-bits WORD depuis le registre EAX.
+Cet identifiant étant un index dans la structure interne de la table System Service Descriptor Table (SSDT) dans la pile d&amp;rsquo;exécution du Kernel.</description>
     </item>
+    
     <item>
       <title>À propos</title>
       <link>https://sh0ckfr.github.io/about/</link>
       <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
+      
       <guid>https://sh0ckfr.github.io/about/</guid>
-      <description>Bonjour,&#xA;Après avoir passé quelques années en tant que Consultant en sécurité informatique, je suis maintenant opérateur Red Team.&#xA;Ceci est mon blog, j&amp;rsquo;espère que vous apprendrez des trucs utiles dessus, si jamais vous observez des erreurs ou des choses utiles à me remonter, n&amp;rsquo;hésitez pas, j&amp;rsquo;offre le café !&#xA;Je ne communiquerais pas des solutions clés en main, c&amp;rsquo;est à vous ensuite de chercher par vous même de ce qu&amp;rsquo;il est possible de faire, il n&amp;rsquo;est pas exclu que je parle de d&amp;rsquo;autres domaines.</description>
+      <description>Bonjour,
+Après avoir passé quelques années en tant que Consultant en sécurité informatique, je suis maintenant opérateur Red Team.
+Ceci est mon blog, j&amp;rsquo;espère que vous apprendrez des trucs utiles dessus, si jamais vous observez des erreurs ou des choses utiles à me remonter, n&amp;rsquo;hésitez pas, j&amp;rsquo;offre le café !
+Je ne communiquerais pas des solutions clés en main, c&amp;rsquo;est à vous ensuite de chercher par vous même de ce qu&amp;rsquo;il est possible de faire, il n&amp;rsquo;est pas exclu que je parle de d&amp;rsquo;autres domaines.</description>
     </item>
+    
   </channel>
 </rss>

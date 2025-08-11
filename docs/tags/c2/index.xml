@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>c2 on Sh0ckFR&#39;s Website | CyberPunk, Born in the binary world of the computer security</title>
+    <link>https://sh0ckfr.github.io/tags/c2/</link>
+    <description>Recent content in c2 on Sh0ckFR&#39;s Website | CyberPunk, Born in the binary world of the computer security</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 11 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://sh0ckfr.github.io/tags/c2/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Régis fait son propre C2</title>
+      <link>https://sh0ckfr.github.io/pages/regis-fait-son-propre-c2/</link>
+      <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh0ckfr.github.io/pages/regis-fait-son-propre-c2/</guid>
+      <description>Hello tout le monde, ça fait un moment ^^
+Aujourd&amp;rsquo;hui on va parler C2, comment bien penser son propre C2 avant de le développer car je me suis lancé sur le sujet, et après beaucoup beaucoup trop d&amp;rsquo;erreurs, j&amp;rsquo;ai maintenant une base solide sur le sujet car c&amp;rsquo;est probablement un des sujets les plus techniques à réaliser en programmation et je pèse mes mots, ne vous lancez pas là dedans si vous n&amp;rsquo;avez pas un très bon niveau en programmation sauf si vous aimez le challenge :&#39;)</description>
+    </item>
+    
+  </channel>
+</rss>

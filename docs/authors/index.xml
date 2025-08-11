@@ -5,7 +5,6 @@
     <link>https://sh0ckfr.github.io/authors/</link>
     <description>Recent content in Authors on Sh0ckFR&#39;s Website | CyberPunk, Born in the binary world of the computer security</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <atom:link href="https://sh0ckfr.github.io/authors/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language><atom:link href="https://sh0ckfr.github.io/authors/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
