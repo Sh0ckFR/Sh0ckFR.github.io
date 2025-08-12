@@ -10,7 +10,7 @@ tags = [
 
 Hello tout le monde, ça fait un moment ^^
 
-Aujourd'hui on va parler C2, comment bien penser son propre C2 avant de le développer car je me suis lancé sur le sujet, et après beaucoup beaucoup trop d'erreurs, j'ai maintenant une base solide sur le sujet car c'est probablement un des sujets les plus techniques à réaliser en programmation et je pèse mes mots, ne vous lancez pas là dedans si vous n'avez pas un très bon niveau en programmation sauf si vous aimez le challenge :')
+Aujourd'hui on va parler C2, comment bien penser son propre C2 avant de le développer car je me suis lancé sur le sujet, et après beaucoup beaucoup trop d'erreurs, j'ai maintenant une base solide car c'est probablement un des aspects les plus techniques à réaliser en programmation et je pèse mes mots, ne vous lancez pas là dedans si vous n'avez pas un très bon niveau en programmation sauf si vous aimez le challenge :')
 
 ## Petit Historique
 
@@ -44,7 +44,7 @@ Il s'avère que plus on utilise un C2 et plus il est utilisé dans d'autres équ
 
 Il y a parfois aussi des leaks qui sont distribués sur internet, crackés via des licences officielles et utilisées par des threat actors donc on peut retrouver facilement un Cobalt-Strike, un BruteRatel ou autre dans la nature en torrent dans une ancienne version qui peut permettre de détecter les nouvelles versions, bref c'est le jeu du chat et de la souris.
 
-Il se trouve que dans le cadre d'une red team qui a déjà utilisée et qui connaît bien ces frameworks C2, elle peut décider de développer son propre C2 pour des accès initiaux voir une solution complète afin d'avoir une base complètement clean pour les antivirus et EDRs et customisable.
+Il se trouve que dans le cadre d'une red team qui a déjà utilisée et qui connaît bien ces frameworks C2, elle peut décider de développer le sien pour des accès initiaux voir une solution complète afin d'avoir une base complètement clean pour les antivirus et EDRs et customisable.
 
 Dans notre équipe, c'est un peu notre cas, on apprécie utiliser des nouvelles méthodes donc dans ce cadre là, totalement encadré et légitime bien entendu, nous décidons de développer ce genre de solutions.
 

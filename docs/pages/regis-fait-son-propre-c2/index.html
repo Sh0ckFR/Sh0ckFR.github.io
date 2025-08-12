@@ -122,7 +122,7 @@
     </header>
 
     <p>Hello tout le monde, ça fait un moment ^^</p>
-<p>Aujourd&rsquo;hui on va parler C2, comment bien penser son propre C2 avant de le développer car je me suis lancé sur le sujet, et après beaucoup beaucoup trop d&rsquo;erreurs, j&rsquo;ai maintenant une base solide sur le sujet car c&rsquo;est probablement un des sujets les plus techniques à réaliser en programmation et je pèse mes mots, ne vous lancez pas là dedans si vous n&rsquo;avez pas un très bon niveau en programmation sauf si vous aimez le challenge :')</p>
+<p>Aujourd&rsquo;hui on va parler C2, comment bien penser son propre C2 avant de le développer car je me suis lancé sur le sujet, et après beaucoup beaucoup trop d&rsquo;erreurs, j&rsquo;ai maintenant une base solide car c&rsquo;est probablement un des aspects les plus techniques à réaliser en programmation et je pèse mes mots, ne vous lancez pas là dedans si vous n&rsquo;avez pas un très bon niveau en programmation sauf si vous aimez le challenge :')</p>
 <h2 id="petit-historique">
   Petit Historique
   <a class="heading-link" href="#petit-historique">
@@ -144,7 +144,7 @@
 <p>Ce qui veut dire entraîner les équipes défensives à voir des choses nouvelles à chaque fois pour être capable de mettre en place des règles de sécurité polyvalentes et efficaces par rapport aux nouvelles menaces et aux nouveaux modes d&rsquo;attaques.</p>
 <p>Il s&rsquo;avère que plus on utilise un C2 et plus il est utilisé dans d&rsquo;autres équipes red team autour du globe, plus il est facilement identifiable car les équipes défensives arrivent à identifier leurs comportements ou les identifier via des particularités précises vu que c&rsquo;est toujours le même logiciel vendu à des red teams.</p>
 <p>Il y a parfois aussi des leaks qui sont distribués sur internet, crackés via des licences officielles et utilisées par des threat actors donc on peut retrouver facilement un Cobalt-Strike, un BruteRatel ou autre dans la nature en torrent dans une ancienne version qui peut permettre de détecter les nouvelles versions, bref c&rsquo;est le jeu du chat et de la souris.</p>
-<p>Il se trouve que dans le cadre d&rsquo;une red team qui a déjà utilisée et qui connaît bien ces frameworks C2, elle peut décider de développer son propre C2 pour des accès initiaux voir une solution complète afin d&rsquo;avoir une base complètement clean par les antivirus et EDRs et customisable.</p>
+<p>Il se trouve que dans le cadre d&rsquo;une red team qui a déjà utilisée et qui connaît bien ces frameworks C2, elle peut décider de développer le sien pour des accès initiaux voir une solution complète afin d&rsquo;avoir une base complètement clean pour les antivirus et EDRs et customisable.</p>
 <p>Dans notre équipe, c&rsquo;est un peu notre cas, on apprécie utiliser des nouvelles méthodes donc dans ce cadre là, totalement encadré et légitime bien entendu, nous décidons de développer ce genre de solutions.</p>
 <p>Nous ne pouvons pas bien entendu partager des sources complètes, car forcément utilisées par des threats actors ensuite.</p>
 <p>Dans cet article, je vais cependant expliquer comment développer son propre C2 fonctionnel sans pour autant divulguer les sources complètes, ce qui sera certainement utile pour des équipes red team voulant faire de la R&amp;D sur le sujet.</p>
@@ -186,7 +186,7 @@
 <div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>id=1&amp;fake_cache_data=BLABLA&amp;cache_data=PAYLOAD&amp;output=json
 </span></span></code></pre></div><p>Où <code>fake_cache_data</code> serait utilisé pour tromper des équipes SOC avec une fausse payload, et la vraie payload se trouverait par exemple dans <code>cache_data</code>.</p>
 <p>Il y a encore plus surnois, c&rsquo;est de découper la payload en plusieurs POST avec des leurres à côté, mais je n&rsquo;ai jamais encore vu trop ça dans un C2 public ou commercial, ça reste compliqué à mettre en place niveau code en réalité.</p>
-<p>Il est aussi possible et ce qu&rsquo;on voit la plupart du temps, d&rsquo;avoir l&rsquo;implant qui communiquer son <code>SERVER_RESPONSE_PREPEND</code> et <code>SERVER_RESPONSE_APPEND</code> c&rsquo;est concrêtement la même chose pour que le <code>POST prepend</code> et <code>POST append</code> mais ça concerne la réponse du serveur, exemple :</p>
+<p>Il est aussi possible et ce qu&rsquo;on voit la plupart du temps, d&rsquo;avoir l&rsquo;implant qui communique son <code>SERVER_RESPONSE_PREPEND</code> et <code>SERVER_RESPONSE_APPEND</code> c&rsquo;est concrêtement la même chose pour que le <code>POST prepend</code> et <code>POST append</code> mais ça concerne la réponse du serveur, exemple :</p>
 <div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#fb660a;font-weight:bold">html</span>&gt;&lt;<span style="color:#fb660a;font-weight:bold">body</span>&gt;&lt;<span style="color:#fb660a;font-weight:bold">p</span>&gt;PAYLOAD&lt;/<span style="color:#fb660a;font-weight:bold">p</span>&gt;&lt;/<span style="color:#fb660a;font-weight:bold">body</span>&gt;&lt;/<span style="color:#fb660a;font-weight:bold">html</span>&gt;
 </span></span></code></pre></div><p>La PAYLOAD se trouve à ce moment là entre son <code>SERVER_RESPONSE_PREPEND</code> et <code>SERVER_RESPONSE_APPEND</code> qui sont les balises html de réponse du serveur.</p>
 <p>Ici le <code>SERVER_RESPONSE_PREPEND</code> serait :</p>
@@ -199,14 +199,14 @@
     <i class="fa fa-link" aria-hidden="true"></i>
   </a>
 </h2>
-<p>Le serveur attend et traite les requêtes de l&rsquo;implant, il a une base de données disponible qui lui permet d&rsquo;enregistrer les commandes qu&rsquo;il a reçu, les commandes qu&rsquo;il a pas encore traîté &ldquo;is_executed?&rdquo; et les résultats si &ldquo;is_executed est égal à False, l&rsquo;implant exécute la commande et renvoie le résultat, à ce moment là is_executed passe à true avec le résultat de la commande&rdquo; donc l&rsquo;implant sait du coup qu&rsquo;il ne doit plus la traiter.</p>
+<p>Le serveur attend et traite les requêtes de l&rsquo;implant, il a une base de données disponible qui lui permet d&rsquo;enregistrer les commandes qu&rsquo;il a reçu, les commandes qu&rsquo;il a pas encore traîté <code>is_executed?</code> et les résultats si <code>is_executed</code> est égal à <code>False</code>, l&rsquo;implant exécute la commande et renvoie le résultat, à ce moment là is_executed passe à true avec le résultat de la commande&quot; donc l&rsquo;implant sait du coup qu&rsquo;il ne doit plus la traiter.</p>
 <h2 id="de-quoi-est-composé-le-client-">
   De quoi est composé le client ?
   <a class="heading-link" href="#de-quoi-est-compos%c3%a9-le-client-">
     <i class="fa fa-link" aria-hidden="true"></i>
   </a>
 </h2>
-<p>Le client est l&rsquo;interface graphique (ou CLI peut importe) d&rsquo;un red teamer, qui ne sera jamais exposée sur internet, elle sert à communiquer directement les commandes ou informations que l&rsquo;implant devra exécuter via le serveur.</p>
+<p>Le client est l&rsquo;interface graphique (ou CLI peu importe) d&rsquo;un red teamer, qui ne sera jamais exposée sur internet, elle sert à communiquer directement les commandes ou informations que l&rsquo;implant devra exécuter via le serveur.</p>
 <p>Ce client va interroger le serveur pour avoir la liste des commandes passées sur celui-ci et voir si il a obtenu une réponse pour chacune d&rsquo;entre elles et les afficher.</p>
 <h2 id="cest-quoi-un-redirector-">
   C&rsquo;est quoi un redirector ?
@@ -223,9 +223,9 @@
 </h2>
 <p>Concrêtement le <code>Timer</code> est le nombre de secondes que vous voulez que l&rsquo;implant fasse une requête au redirector, qui lui va transmettre la demande au serveur C2 hébergé en interne.</p>
 <p>Le <code>Jitter</code> est souvent noté en pourcentage, en gros pour éviter d&rsquo;avoir un <code>Timer</code> fixe et récurrent, le <code>Jitter</code> lui va rajouter un délai supplémentaire genre 20 ou 50% du temps en plus consacré au <code>Timer</code> de façon random, de ce fait, vos requêtes de l&rsquo;implant deviennent plus aléatoires, ce qui empêche des détections par rapport à la récurrence des requêtes (si votre implant communique toutes les 5 secondes de façon fixe c&rsquo;est suspect par exemple mais si votre implant communique toutes les 5 secondes + un pourcentage aléatoire, ça l&rsquo;est moins).</p>
-<h2 id="à-cette-étape-là-quest-que-cela-nous-explique-">
-  À cette étape là qu&rsquo;est que cela nous explique ?
-  <a class="heading-link" href="#%c3%a0-cette-%c3%a9tape-l%c3%a0-quest-que-cela-nous-explique-">
+<h2 id="à-cette-étape-là-quest-ce-que-cela-nous-explique-">
+  À cette étape là qu&rsquo;est ce que cela nous explique ?
+  <a class="heading-link" href="#%c3%a0-cette-%c3%a9tape-l%c3%a0-quest-ce-que-cela-nous-explique-">
     <i class="fa fa-link" aria-hidden="true"></i>
   </a>
 </h2>
@@ -241,7 +241,7 @@
   </a>
 </h2>
 <p>Oui c&rsquo;est bien beau d&rsquo;implémenter les commandes de bases <code>cd</code> <code>ls</code> ou whatever, il y a des choses à comprendre, notamment le fait de ne pas utiliser des commandes trop connues dans votre C2 style <code>whoami</code> pour ce genre de commandes, il est préférable de produire l&rsquo;équivalent sans appeler les commandes systèmes de base qui peuvent être très monitorées.</p>
-<p>Pour cela, il est plus intéressant de se passer sur du code open source Windows comme ReactOS pour éviter de déclencher des alertes de base, mieux comprendre la source ReactOS vous permettra de comprendre qu&rsquo;il est possible de faire des actions vraiment offensives sans être détecté, pour cela il y a pas de secret, il faut se plonger dans la source et comprendre les mécanismes.</p>
+<p>Pour cela, il est plus intéressant de se baser sur du code open source Windows comme ReactOS pour éviter de déclencher des alertes de base, mieux comprendre la source ReactOS vous permettra de comprendre qu&rsquo;il est possible de faire des actions vraiment offensives sans être détecté, pour cela il y a pas de secret, il faut se plonger dans la source et comprendre les mécanismes.</p>
 <p>C&rsquo;est le cas par exemple pour <code>whoami</code>, ou bien faire un dump lsass sans appeler la fonction <code>minidumpwritedump</code> directement pour dumper lsass, des multiples exemples sont présents.</p>
 <p>Des projets OpenSource plus évolués sont disponibles sur github, plus vous comprenez les potentielles détections côté SOC, plus vous serez efficace en red team et donc en capacité de développer un outil C2 totalement opérationnel.</p>
 <p>Cela demande clairement d&rsquo;avoir au moins touché à un SIEM une fois, donc avoir une petite expérience blue à minima et voir la télémétrie présente dans l&rsquo;EDR (dans le bouzin comme on dit).</p>
@@ -255,10 +255,12 @@
 <p><code>Comment ça fonctionne ?</code></p>
 <p>Imaginez vous avez votre implant qui fonctionne sur une machine nommée <code>toto</code>, vous avez accès à cette machine mais pas au serveur <code>tata</code> directement qui est accessible que depuis le réseau interne de <code>toto</code>.</p>
 <p>Le but du socks5 est d&rsquo;utiliser la machine <code>toto</code> dont vous avez accès en passant par le réseau interne pour accéder au réseau interne et donc accéder au serveur <code>tata</code>.</p>
-<p>Au final vous utiliser la connexion de <code>toto</code> en socks5 pour atteindre le serveur interne <code>tata</code>.</p>
+<p>Au final vous utilisez la connexion de <code>toto</code> en socks5 pour atteindre le serveur interne <code>tata</code>.</p>
 <p>Le problème qu&rsquo;il se pose, c&rsquo;est que votre implant communique avec vous seulement via des requêtes POST de base.</p>
 <p>Nous il nous faut un canal socks5 au complet, fonctionnel et sans crashes.</p>
 <p>Je mettrais à jour cet article pour expliquer tout ça dans une seconde partie car on rentre clairement dans l&rsquo;aspect technique avancé de la chose.</p>
+<p>Je reviendrais aussi sur la communication, le fait de varier les requêtes POST avec les différents headers pour noyer encore plus la communication.</p>
+<p>Mais aussi comment bien gérer sa base de données côté serveur, car si vous partez dans tous les sens sans relations entre tables, c&rsquo;est mort d&rsquo;avance.</p>
 <p>Des bisous :)</p>
 
   </article>
