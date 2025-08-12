@@ -242,7 +242,7 @@
 </h2>
 <p>Oui c&rsquo;est bien beau d&rsquo;implémenter les commandes de bases <code>cd</code> <code>ls</code> ou whatever, il y a des choses à comprendre, notamment le fait de ne pas utiliser des commandes trop connues dans votre C2 style <code>whoami</code> pour ce genre de commandes, il est préférable de produire l&rsquo;équivalent sans appeler les commandes systèmes de base qui peuvent être très monitorées.</p>
 <p>Pour cela, il est plus intéressant de se baser sur du code open source Windows comme ReactOS pour éviter de déclencher des alertes de base, mieux comprendre la source ReactOS vous permettra de comprendre qu&rsquo;il est possible de faire des actions vraiment offensives sans être détecté, pour cela il y a pas de secret, il faut se plonger dans la source et comprendre les mécanismes.</p>
-<p>C&rsquo;est le cas par exemple pour <code>whoami</code>, ou bien faire un dump lsass sans appeler la fonction <code>minidumpwritedump</code> directement pour dumper lsass, des multiples exemples sont présents.</p>
+<p>C&rsquo;est le cas par exemple pour <code>whoami</code>, ou bien sans appeler la fonction <code>minidumpwritedump</code> directement pour dumper lsass, des multiples exemples sont présents.</p>
 <p>Des projets OpenSource plus évolués sont disponibles sur github, plus vous comprenez les potentielles détections côté SOC, plus vous serez efficace en red team et donc en capacité de développer un outil C2 totalement opérationnel.</p>
 <p>Cela demande clairement d&rsquo;avoir au moins touché à un SIEM une fois, donc avoir une petite expérience blue à minima et voir la télémétrie présente dans l&rsquo;EDR (dans le bouzin comme on dit).</p>
 <h2 id="la-fonctionnalité-la-plus-hardcore-dans-un-c2-le-socks5">

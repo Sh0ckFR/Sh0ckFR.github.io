@@ -149,7 +149,7 @@ Oui c'est bien beau d'implémenter les commandes de bases `cd` `ls` ou whatever,
 
 Pour cela, il est plus intéressant de se baser sur du code open source Windows comme ReactOS pour éviter de déclencher des alertes de base, mieux comprendre la source ReactOS vous permettra de comprendre qu'il est possible de faire des actions vraiment offensives sans être détecté, pour cela il y a pas de secret, il faut se plonger dans la source et comprendre les mécanismes.
 
-C'est le cas par exemple pour `whoami`, ou bien faire un dump lsass sans appeler la fonction `minidumpwritedump` directement pour dumper lsass, des multiples exemples sont présents.
+C'est le cas par exemple pour `whoami`, ou bien sans appeler la fonction `minidumpwritedump` directement pour dumper lsass, des multiples exemples sont présents.
 
 Des projets OpenSource plus évolués sont disponibles sur github, plus vous comprenez les potentielles détections côté SOC, plus vous serez efficace en red team et donc en capacité de développer un outil C2 totalement opérationnel.
 
