@@ -133,7 +133,7 @@ Le `Jitter` est souvent noté en pourcentage, en gros pour éviter d'avoir un `T
 
 ## À cette étape là qu'est ce que cela nous explique ?
 
-À cette étape là, vous pouvez comprendre à minima que la base de données est entièrement côté serveur pour 90% des données.
+À cette étape là, vous pouvez aussi comprendre à minima que la base de données est entièrement côté serveur pour 90% des données.
 
 Côté client, vous allez juste retrouver les différents serveurs auquel vous vous êtes connecté mais rien de plus.
 
